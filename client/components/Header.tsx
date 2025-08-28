@@ -7,7 +7,7 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="bg-white shadow-sm sticky top-0 z-50">
+    <header className="bg-white shadow-sm">
       {/* Top Contact Strip with Premium Styling */}
       <div className="bg-gradient-to-r from-college-navy via-college-charcoal to-college-navy text-white relative overflow-hidden">
         {/* Subtle Background Pattern */}
@@ -113,7 +113,7 @@ export default function Header() {
       </div>
 
       {/* Primary Navigation - Light Brown/Golden Strip */}
-      <div className="bg-gradient-to-r from-amber-100 to-yellow-100 border-b border-college-navy/10">
+      <div className="bg-gradient-to-r from-amber-100 to-yellow-100 border-b border-college-navy/10 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <nav className="hidden lg:flex items-center h-12 space-x-8">
             <a href="/" className="bg-college-navy text-white px-4 py-2 rounded-md text-sm font-semibold shadow-md hover:bg-college-navy/90 transition-all">
