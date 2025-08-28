@@ -10,6 +10,8 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import SocialSidebar from "./components/SocialSidebar";
 import AdmissionPanel from "./components/AdmissionPanel";
+import MainMenu from "./components/MainMenu";
+import NewsTicker from "./components/NewsTicker";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
