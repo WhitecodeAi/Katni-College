@@ -1,0 +1,203 @@
+/** @import must precede all other statements */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /**
+   * Tailwind CSS theme
+   * tailwind.config.ts expects the following color variables to be expressed as HSL values.
+   * A different format will require also updating the theme in tailwind.config.ts.
+  */
+  :root {
+    --background: 35 8% 97%;
+    --foreground: 215 30% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 30% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 30% 12%;
+
+    --primary: 215 95% 20%;
+    --primary-foreground: 35 8% 97%;
+
+    --secondary: 35 20% 90%;
+    --secondary-foreground: 215 30% 12%;
+
+    --muted: 35 12% 92%;
+    --muted-foreground: 215 18% 42%;
+
+    --accent: 45 95% 58%;
+    --accent-foreground: 215 30% 12%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 35 12% 85%;
+    --input: 35 12% 85%;
+    --ring: 215 95% 20%;
+
+    --radius: 0.75rem;
+
+    /* College premium colors - Enhanced */
+    --college-navy: 215 95% 20%;
+    --college-gold: 45 95% 58%;
+    --college-cream: 35 20% 90%;
+    --college-burgundy: 355 75% 32%;
+    --college-sage: 120 35% 45%;
+    --college-platinum: 220 5% 88%;
+    --college-charcoal: 215 25% 15%;
+    --college-bronze: 30 65% 45%;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 215 25% 8%;
+    --foreground: 35 15% 95%;
+
+    --card: 215 25% 10%;
+    --card-foreground: 35 15% 95%;
+
+    --popover: 215 25% 10%;
+    --popover-foreground: 35 15% 95%;
+
+    --primary: 45 85% 65%;
+    --primary-foreground: 215 25% 8%;
+
+    --secondary: 215 25% 15%;
+    --secondary-foreground: 35 15% 95%;
+
+    --muted: 215 25% 15%;
+    --muted-foreground: 35 15% 65%;
+
+    --accent: 215 85% 55%;
+    --accent-foreground: 35 15% 95%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 215 25% 18%;
+    --input: 215 25% 18%;
+    --ring: 45 85% 65%;
+
+    /* College premium colors - dark mode */
+    --college-navy: 215 85% 35%;
+    --college-gold: 45 85% 75%;
+    --college-cream: 35 25% 15%;
+    --college-burgundy: 355 65% 45%;
+    --college-sage: 120 25% 65%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Premium Academic Elements */
+  .academic-border {
+    border-image: linear-gradient(45deg, hsl(var(--college-gold)), hsl(var(--college-navy))) 1;
+  }
+
+  .academic-shadow {
+    box-shadow:
+      0 4px 6px -1px rgba(0, 0, 0, 0.05),
+      0 10px 15px -3px rgba(0, 0, 0, 0.08),
+      0 0 0 1px rgba(215, 95, 20, 0.05);
+  }
+
+  .premium-gradient {
+    background: linear-gradient(135deg,
+      hsl(var(--college-cream)) 0%,
+      hsl(var(--college-platinum)) 50%,
+      hsl(var(--college-cream)) 100%);
+  }
+
+  .academic-texture::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(circle at 25% 25%, hsl(var(--college-gold) / 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, hsl(var(--college-navy) / 0.03) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .fade-in {
+    animation: fade-in 0.6s ease-out;
+  }
+
+  .slide-up {
+    animation: slide-up 0.8s ease-out;
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  .animate-marquee {
+    animation: marquee 45s linear infinite;
+  }
+}
