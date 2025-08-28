@@ -151,105 +151,30 @@ export default function Index() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <Card className="bg-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-              <CardContent className="p-6 text-center">
-                <div className="relative mb-6">
-                  <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden mx-auto mb-4">
-                    <img src="https://cdn.builder.io/api/v1/image/assets%2F19009a265873491e8d25a2fc6b43dc4d%2Fe1ced84cd4a14c70b19921fc1f7614e7?format=webp&width=800" alt="Secretary" className="w-full h-full object-cover" />
-                  </div>
-                  <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-college-gold rounded-full flex items-center justify-center">
-                    <svg className="h-4 w-4 text-college-navy" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                </div>
-                <h3 className="text-lg font-serif font-bold text-college-navy mb-2">
-                  Dr. Rajesh Sharma
-                </h3>
-                <p className="text-college-gold font-medium mb-3">Secretary</p>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  "Education is the foundation of progress. At KACC, we strive to build strong foundations for our students' future."
-                </p>
-                <Button variant="outline" size="sm" className="mt-4 text-college-navy border-college-navy hover:bg-college-navy hover:text-white">
-                  Read Message
-                </Button>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-              <CardContent className="p-6 text-center">
-                <div className="relative mb-6">
-                  <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden mx-auto mb-4">
-                    <img src="https://cdn.builder.io/api/v1/image/assets%2F19009a265873491e8d25a2fc6b43dc4d%2F95220ce947ac4fb78fbedbe51c82a03f?format=webp&width=800" alt="Chairperson" className="w-full h-full object-cover" />
-                  </div>
-                  <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-college-gold rounded-full flex items-center justify-center">
-                    <svg className="h-4 w-4 text-college-navy" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                </div>
-                <h3 className="text-lg font-serif font-bold text-college-navy mb-2">
-                  Shri Amit Verma
-                </h3>
-                <p className="text-college-gold font-medium mb-3">Chairperson</p>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  "Our commitment to excellence drives us to continuously evolve and provide world-class education to our students."
-                </p>
-                <Button variant="outline" size="sm" className="mt-4 text-college-navy border-college-navy hover:bg-college-navy hover:text-white">
-                  Read Message
-                </Button>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-              <CardContent className="p-6 text-center">
-                <div className="relative mb-6">
-                  <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden mx-auto mb-4">
-                    <img src="https://cdn.builder.io/api/v1/image/assets%2F19009a265873491e8d25a2fc6b43dc4d%2F2a563b2e761b497abef2f2a95864594a?format=webp&width=800" alt="Principal" className="w-full h-full object-cover" />
-                  </div>
-                  <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-college-gold rounded-full flex items-center justify-center">
-                    <svg className="h-4 w-4 text-college-navy" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                </div>
-                <h3 className="text-lg font-serif font-bold text-college-navy mb-2">
-                  Dr. Priya Agarwal
-                </h3>
-                <p className="text-college-gold font-medium mb-3">Principal</p>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  "Knowledge is power, and we empower our students with the tools they need to succeed in an ever-changing world."
-                </p>
-                <Button variant="outline" size="sm" className="mt-4 text-college-navy border-college-navy hover:bg-college-navy hover:text-white">
-                  Read Message
-                </Button>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-              <CardContent className="p-6 text-center">
-                <div className="relative mb-6">
-                  <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden mx-auto mb-4">
-                    <img src="https://cdn.builder.io/api/v1/image/assets%2F19009a265873491e8d25a2fc6b43dc4d%2F0968f29aaf7440928eb7586e7919e4a6?format=webp&width=800" alt="Vice Principal" className="w-full h-full object-cover" />
-                  </div>
-                  <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-college-gold rounded-full flex items-center justify-center">
-                    <svg className="h-4 w-4 text-college-navy" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                </div>
-                <h3 className="text-lg font-serif font-bold text-college-navy mb-2">
-                  Prof. Suresh Kumar
-                </h3>
-                <p className="text-college-gold font-medium mb-3">Vice Principal</p>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  "Innovation in education is key to preparing students for tomorrow's challenges and opportunities."
-                </p>
-                <Button variant="outline" size="sm" className="mt-4 text-college-navy border-college-navy hover:bg-college-navy hover:text-white">
-                  Read Message
-                </Button>
-              </CardContent>
-            </Card>
+            <LeadershipCard
+              name="Dr. Rajesh Sharma"
+              role="Secretary"
+              imageUrl="https://cdn.builder.io/api/v1/image/assets%2F19009a265873491e8d25a2fc6b43dc4d%2Fe1ced84cd4a14c70b19921fc1f7614e7?format=webp&width=800"
+              quote="Education is the foundation of progress. At KACC, we strive to build strong foundations for our students' future."
+            />
+            <LeadershipCard
+              name="Shri Amit Verma"
+              role="Chairperson"
+              imageUrl="https://cdn.builder.io/api/v1/image/assets%2F19009a265873491e8d25a2fc6b43dc4d%2F95220ce947ac4fb78fbedbe51c82a03f?format=webp&width=800"
+              quote="Our commitment to excellence drives us to continuously evolve and provide world-class education to our students."
+            />
+            <LeadershipCard
+              name="Dr. Priya Agarwal"
+              role="Principal"
+              imageUrl="https://cdn.builder.io/api/v1/image/assets%2F19009a265873491e8d25a2fc6b43dc4d%2F2a563b2e761b497abef2f2a95864594a?format=webp&width=800"
+              quote="Knowledge is power, and we empower our students with the tools they need to succeed in an ever-changing world."
+            />
+            <LeadershipCard
+              name="Prof. Suresh Kumar"
+              role="Vice Principal"
+              imageUrl="https://cdn.builder.io/api/v1/image/assets%2F19009a265873491e8d25a2fc6b43dc4d%2F0968f29aaf7440928eb7586e7919e4a6?format=webp&width=800"
+              quote="Innovation in education is key to preparing students for tomorrow's challenges and opportunities."
+            />
           </div>
         </div>
       </section>
