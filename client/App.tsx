@@ -23,6 +23,8 @@ const App = () => (
       <BrowserRouter>
         <div className="min-h-screen flex flex-col">
           <Header />
+          <MainMenu />
+          <NewsTicker />
           <SocialSidebar />
           <AdmissionPanel />
           <main className="flex-1">
