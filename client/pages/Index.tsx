@@ -229,8 +229,8 @@ export default function Index() {
             <Card className="bg-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
               <CardContent className="p-6 text-center">
                 <div className="relative mb-6">
-                  <div className="w-24 h-24 bg-gradient-to-br from-college-gold to-college-burgundy rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="text-white font-bold text-2xl font-serif">V</span>
+                  <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4">
+                    <img src="https://cdn.builder.io/api/v1/image/assets%2F19009a265873491e8d25a2fc6b43dc4d%2F0968f29aaf7440928eb7586e7919e4a6?format=webp&width=800" alt="Vice Principal" className="w-full h-full object-cover" />
                   </div>
                   <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-college-gold rounded-full flex items-center justify-center">
                     <svg className="h-4 w-4 text-college-navy" fill="currentColor" viewBox="0 0 20 20">
