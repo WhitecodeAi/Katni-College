@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { useState, useEffect } from "react";
 import NewsSection from "@/components/NewsSection";
 import LeadershipCard from "@/components/LeadershipCard";
+import { leaders } from "@/data/leaders";
 
 export default function Index() {
   const slideImage = 'https://cdn.builder.io/api/v1/image/assets%2Fea72e649953d477dac6701b6dc53a600%2Fdd7883b2dc6f4ddea6e4780d8396b2eb?format=webp&width=800';
