@@ -15,7 +15,7 @@ export const leaders: Leader[] = [
       "Education is the foundation of progress. At KACC, we strive to build strong foundations for our students' future.",
   },
   {
-    name: "Shri Amit Verma",
+    name: "Dr. Priya Agarwal",
     role: "Chairperson",
     imageUrl:
       "https://cdn.builder.io/api/v1/image/assets%2F19009a265873491e8d25a2fc6b43dc4d%2F95220ce947ac4fb78fbedbe51c82a03f?format=webp&width=800",
@@ -23,7 +23,7 @@ export const leaders: Leader[] = [
       "Our commitment to excellence drives us to continuously evolve and provide world-class education to our students.",
   },
   {
-    name: "Dr. Priya Agarwal",
+    name: "Shri Amit Verma",
     role: "Principal",
     imageUrl:
       "https://cdn.builder.io/api/v1/image/assets%2F19009a265873491e8d25a2fc6b43dc4d%2F2a563b2e761b497abef2f2a95864594a?format=webp&width=800",
