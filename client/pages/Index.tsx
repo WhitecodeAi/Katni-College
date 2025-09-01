@@ -183,7 +183,7 @@ export default function Index() {
       { name: "LL.B.", eligibility: "Graduation in any stream", duration: "3 Years", details: "Bachelor of Laws." },
       {
         name: "LL.M.", eligibility: "Graduation in LL.B.", duration: "2 Years (4 Semesters)",
-        imageUrl: "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+       
       },
     ],
     "Library Science": [
