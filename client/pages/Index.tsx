@@ -590,13 +590,13 @@ export default function Index() {
           </div>
           
           <Tabs defaultValue="Science" className="w-full">
-            <div className="flex justify-center mb-10">
-              <TabsList className="bg-college-cream text-college-navy">
+            <div className="flex justify-center mb-10 overflow-x-auto w-full">
+              <TabsList className="bg-college-cream text-college-navy whitespace-nowrap">
                 {Object.keys(faculties).map((fac) => (
                   <TabsTrigger
                     key={fac}
                     value={fac}
-                    className="data-[state=active]:bg-college-gold data-[state=active]:text-college-navy"
+                    className="data-[state=active]:bg-college-gold data-[state=active]:text-college-navy shrink-0"
                   >
                     {fac}
                   </TabsTrigger>
