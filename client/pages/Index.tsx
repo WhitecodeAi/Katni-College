@@ -67,49 +67,49 @@ export default function Index() {
         eligibility: "Higher Secondary (10+2) any stream except Arts",
         duration: "3 Years",
         details: "Undergraduate commerce degree with Applied Economics specialization.",
-        imageUrl: "https://images.unsplash.com/photo-1556742212-5b321f3c261b?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        imageUrl: "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       },
       {
         name: "B.Com. (Tax Procedure)",
         eligibility: "Higher Secondary (10+2) any stream except Arts",
         duration: "3 Years",
         details: "Specialization focused on taxation procedures and practices.",
-        imageUrl: "https://images.unsplash.com/photo-1556742212-5b321f3c261b?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        imageUrl: "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       },
       {
         name: "B.Com. (Computer Application)",
         eligibility: "Higher Secondary (10+2) any stream except Arts",
         duration: "3 Years",
         details: "Commerce program with emphasis on computer applications.",
-        imageUrl: "https://images.unsplash.com/photo-1556742212-5b321f3c261b?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        imageUrl: "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       },
       {
         name: "B.Com. (Marketing)",
         eligibility: "Higher Secondary (10+2) any stream except Arts",
         duration: "3 Years",
         details: "Undergraduate program centered on marketing domain.",
-        imageUrl: "https://images.unsplash.com/photo-1556742212-5b321f3c261b?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        imageUrl: "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       },
       {
         name: "B.Com. (Honours - Account)",
         eligibility: "Higher Secondary (10+2) any stream except Arts",
         duration: "3 Years",
         details: "Honours specialization in Accountancy.",
-        imageUrl: "https://images.unsplash.com/photo-1556742212-5b321f3c261b?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        imageUrl: "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       },
       {
         name: "B.Com. (Honours - Management)",
         eligibility: "Higher Secondary (10+2) any stream except Arts",
         duration: "3 Years",
         details: "Honours specialization in Management.",
-        imageUrl: "https://images.unsplash.com/photo-1556742212-5b321f3c261b?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        imageUrl: "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       },
       {
         name: "M.Com.",
         eligibility: "Graduation in Commerce",
         duration: "2 Years (4 Semesters)",
         details: "Postgraduate program in Commerce.",
-        imageUrl: "https://images.unsplash.com/photo-1556742212-5b321f3c261b?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        imageUrl: "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       },
     ],
     Arts: [
@@ -184,10 +184,16 @@ export default function Index() {
       { name: "LL.M.", eligibility: "Graduation in LL.B.", duration: "2 Years (4 Semesters)",   imageUrl: "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",},
     ],
     "Library Science": [
-      { name: "B.Lib.", eligibility: "Graduation in any stream", duration: "1 Year (2 Semesters)", details: "Bachelor of Library and Information Science." },
+      {
+        name: "B.Lib.", eligibility: "Graduation in any stream", duration: "1 Year (2 Semesters)", details: "Bachelor of Library and Information Science.",
+        imageUrl: "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+},
     ],
     "Social Work": [
-      { name: "MSW", eligibility: "Graduation in any stream", duration: "2 Years (4 Semesters)", details: "Master of Social Work." },
+      {
+        name: "MSW", eligibility: "Graduation in any stream", duration: "2 Years (4 Semesters)", details: "Master of Social Work.",
+        imageUrl: "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+},
     ],
   };
 
