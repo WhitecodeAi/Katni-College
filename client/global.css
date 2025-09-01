@@ -201,3 +201,11 @@
     animation: marquee 45s linear infinite;
   }
 }
+
+/* Line clamp utility for consistent preview heights */
+.line-clamp-4 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+}
