@@ -17,6 +17,9 @@ export default function Index() {
     // Arrows are visible but do nothing since it's the same slide
   };
 
+  const [visionExpanded, setVisionExpanded] = useState(false);
+  const [missionExpanded, setMissionExpanded] = useState(false);
+
   return (
     <div className="bg-white">
       {/* Hero Carousel Section */}
@@ -98,8 +101,8 @@ export default function Index() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-12">
-            <Card className="bg-white/70 backdrop-blur-sm border-0 shadow-xl">
-              <CardContent className="p-8">
+            <Card className="bg-white/70 backdrop-blur-sm border-0 shadow-xl h-full">
+              <CardContent className="p-8 flex flex-col items-center">
                 <div className="w-16 h-16 bg-gradient-to-br from-college-navy to-college-gold rounded-full flex items-center justify-center mx-auto mb-6">
                   <svg className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -109,7 +112,7 @@ export default function Index() {
                 <h3 className="text-2xl font-serif font-bold text-college-navy mb-4 text-center">
                   Our Vision
                 </h3>
-                <p className="text-muted-foreground leading-relaxed text-center">
+                <p className={`text-muted-foreground leading-relaxed text-center ${visionExpanded ? "" : "line-clamp-4"}`}>
                   Vision to be recognised far and wide as an
                   institution which provides need-based,
                   skill-integrated, cost-effective, quality holistic
@@ -118,11 +121,19 @@ export default function Index() {
                   tomorrow. KACC is committed to becoming a centre of
                   academic excellence.
                 </p>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => setVisionExpanded((v) => !v)}
+                  className="mt-4 border-college-navy text-college-navy hover:bg-college-navy hover:text-white"
+                >
+                  {visionExpanded ? "Read Less" : "Read More"}
+                </Button>
               </CardContent>
             </Card>
 
-            <Card className="bg-white/70 backdrop-blur-sm border-0 shadow-xl">
-              <CardContent className="p-8">
+            <Card className="bg-white/70 backdrop-blur-sm border-0 shadow-xl h-full">
+              <CardContent className="p-8 flex flex-col items-center">
                 <div className="w-16 h-16 bg-gradient-to-br from-college-burgundy to-college-sage rounded-full flex items-center justify-center mx-auto mb-6">
                   <svg className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
@@ -131,7 +142,7 @@ export default function Index() {
                 <h3 className="text-2xl font-serif font-bold text-college-navy mb-4 text-center">
                   Our Mission
                 </h3>
-                <p className="text-muted-foreground leading-relaxed text-center">
+                <p className={`text-muted-foreground leading-relaxed text-center ${missionExpanded ? "" : "line-clamp-4"}`}>
                   Our mission is to create and acquire relevant
                   knowledge along with skills and global competencies
                   and disseminate the same among students. The college
@@ -139,6 +150,14 @@ export default function Index() {
                   curriculum, programmes and pedagogic innovations with
                   focus on employability and self-employment.
                 </p>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => setMissionExpanded((v) => !v)}
+                  className="mt-4 border-college-navy text-college-navy hover:bg-college-navy hover:text-white"
+                >
+                  {missionExpanded ? "Read Less" : "Read More"}
+                </Button>
               </CardContent>
             </Card>
           </div>
