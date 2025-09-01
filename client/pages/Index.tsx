@@ -597,17 +597,19 @@ export default function Index() {
           </div>
           
           <Tabs defaultValue="Science" className="w-full">
-            <TabsList className="mx-auto mb-10 bg-college-cream text-college-navy">
-              {Object.keys(faculties).map((fac) => (
-                <TabsTrigger
-                  key={fac}
-                  value={fac}
-                  className="data-[state=active]:bg-college-gold data-[state=active]:text-college-navy"
-                >
-                  {fac}
-                </TabsTrigger>
-              ))}
-            </TabsList>
+            <div className="flex justify-center mb-10">
+              <TabsList className="bg-college-cream text-college-navy">
+                {Object.keys(faculties).map((fac) => (
+                  <TabsTrigger
+                    key={fac}
+                    value={fac}
+                    className="data-[state=active]:bg-college-gold data-[state=active]:text-college-navy"
+                  >
+                    {fac}
+                  </TabsTrigger>
+                ))}
+              </TabsList>
+            </div>
 
             {Object.entries(faculties).map(([fac, progs]) => (
               <TabsContent key={fac} value={fac}>
