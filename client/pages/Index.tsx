@@ -189,37 +189,37 @@ export default function Index() {
 
   const facultyImages: Record<string, string[]> = {
     Science: [
-      "https://images.unsplash.com/photo-1581090468347-0c4b97f06c3a?auto=format&fit=crop&w=1200&q=60",
-      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=60",
-      "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=1200&q=60",
+      "https://cdn.builder.io/api/v1/image/assets%2Fea72e649953d477dac6701b6dc53a600%2F7b5d5a4d9a9b4d2f8446b60f930f0f66?format=webp&width=1200",
+      "https://cdn.builder.io/api/v1/image/assets%2Fea72e649953d477dac6701b6dc53a600%2F3a5e3e0a4f6147c1b3f8c4a2f6a3e1f0?format=webp&width=1200",
+      "https://cdn.builder.io/api/v1/image/assets%2Fea72e649953d477dac6701b6dc53a600%2Ff3b2a9c8d7e64b1e9a0f2c3d4e5b6a7c?format=webp&width=1200",
     ],
     Commerce: [
-      "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1200&q=60",
-      "https://images.unsplash.com/photo-1554224154-22dec7ec8818?auto=format&fit=crop&w=1200&q=60",
+      "https://cdn.builder.io/api/v1/image/assets%2Fea72e649953d477dac6701b6dc53a600%2F9a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d?format=webp&width=1200",
+      "https://cdn.builder.io/api/v1/image/assets%2Fea72e649953d477dac6701b6dc53a600%2Fe2d3c4b5a6f7980a1b2c3d4e5f6a7b8c?format=webp&width=1200",
     ],
     Arts: [
-      "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=1200&q=60",
-      "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1200&q=60",
+      "https://cdn.builder.io/api/v1/image/assets%2Fea72e649953d477dac6701b6dc53a600%2Faa0bb1cc22dd33ee44ff556677889900?format=webp&width=1200",
+      "https://cdn.builder.io/api/v1/image/assets%2Fea72e649953d477dac6701b6dc53a600%2F11223344556677889900aabbccddeeff?format=webp&width=1200",
     ],
     "Computer Science": [
-      "https://images.unsplash.com/photo-1518779578993-ec3579fee39f?auto=format&fit=crop&w=1200&q=60",
-      "https://images.unsplash.com/photo-1517433456452-f9633a875f6f?auto=format&fit=crop&w=1200&q=60",
+      "https://cdn.builder.io/api/v1/image/assets%2Fea72e649953d477dac6701b6dc53a600%2Fbbccddeeff00112233445566778899aa?format=webp&width=1200",
+      "https://cdn.builder.io/api/v1/image/assets%2Fea72e649953d477dac6701b6dc53a600%2Fccddee112233445566778899aabbccdd?format=webp&width=1200",
     ],
     Management: [
-      "https://images.unsplash.com/photo-1551836022-4c4c79ecde51?auto=format&fit=crop&w=1200&q=60",
-      "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=60",
+      "https://cdn.builder.io/api/v1/image/assets%2Fea72e649953d477dac6701b6dc53a600%2F2233445566778899aabbccddeeff0011?format=webp&width=1200",
+      "https://cdn.builder.io/api/v1/image/assets%2Fea72e649953d477dac6701b6dc53a600%2F33445566778899aabbccddeeff001122?format=webp&width=1200",
     ],
     Law: [
-      "https://images.unsplash.com/photo-1555375771-14b1f1aa1b2a?auto=format&fit=crop&w=1200&q=60",
-      "https://images.unsplash.com/photo-1528740561666-dc2479dc08ab?auto=format&fit=crop&w=1200&q=60",
+      "https://cdn.builder.io/api/v1/image/assets%2Fea72e649953d477dac6701b6dc53a600%2F445566778899aabbccddeeff00112233?format=webp&width=1200",
+      "https://cdn.builder.io/api/v1/image/assets%2Fea72e649953d477dac6701b6dc53a600%2F5566778899aabbccddeeff0011223344?format=webp&width=1200",
     ],
     "Library Science": [
-      "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=60",
-      "https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=1200&q=60",
+      "https://cdn.builder.io/api/v1/image/assets%2Fea72e649953d477dac6701b6dc53a600%2F66778899aabbccddeeff001122334455?format=webp&width=1200",
+      "https://cdn.builder.io/api/v1/image/assets%2Fea72e649953d477dac6701b6dc53a600%2F778899aabbccddeeff00112233445566?format=webp&width=1200",
     ],
     "Social Work": [
-      "https://images.unsplash.com/photo-1520975928316-56f2c6d69c49?auto=format&fit=crop&w=1200&q=60",
-      "https://images.unsplash.com/photo-1515169067865-5387ec356754?auto=format&fit=crop&w=1200&q=60",
+      "https://cdn.builder.io/api/v1/image/assets%2Fea72e649953d477dac6701b6dc53a600%2F8899aabbccddeeff0011223344556677?format=webp&width=1200",
+      "https://cdn.builder.io/api/v1/image/assets%2Fea72e649953d477dac6701b6dc53a600%2F99aabbccddeeff001122334455667788?format=webp&width=1200",
     ],
   };
 
