@@ -21,36 +21,150 @@ export default function Index() {
   const [visionExpanded, setVisionExpanded] = useState(false);
   const [missionExpanded, setMissionExpanded] = useState(false);
 
-  const faculties: Record<string, string[]> = {
+  type Program = { name: string; eligibility: string; duration: string; details: string };
+
+  const faculties: Record<string, Program[]> = {
     Science: [
-      "B.Sc. (Biotech - Botany - Computer)",
-      "B.Sc. (Biotech - Chemistry - Computer)",
-      "B.Sc. (Chemistry - Mathematics - Physics)",
-      "B.Sc. (Computer Science - Mathematics - Physics)",
-      "B.Sc. (Computer Science - Mathematics - Economics)",
+      {
+        name: "B.Sc. (Biotech - Botany - Computer)",
+        eligibility: "Higher Secondary (10+2) Biology",
+        duration: "3 Years",
+        details: "Undergraduate program combining Biotechnology, Botany and Computer studies.",
+      },
+      {
+        name: "B.Sc. (Biotech - Chemistry - Computer)",
+        eligibility: "Higher Secondary (10+2) Biology",
+        duration: "3 Years",
+        details: "Undergraduate program with Biotechnology, Chemistry and Computer Science.",
+      },
+      {
+        name: "B.Sc. (Chemistry - Mathematics - Physics)",
+        eligibility: "Higher Secondary (10+2)",
+        duration: "3 Years",
+        details: "Core science combination covering Chemistry, Mathematics and Physics.",
+      },
+      {
+        name: "B.Sc. (Computer Science - Mathematics - Physics)",
+        eligibility: "Higher Secondary (10+2)",
+        duration: "3 Years",
+        details: "Focus on Computer Science along with Mathematics and Physics.",
+      },
+      {
+        name: "B.Sc. (Computer Science - Mathematics - Economics)",
+        eligibility: "Higher Secondary (10+2)",
+        duration: "3 Years",
+        details: "Interdisciplinary program spanning CS, Mathematics and Economics.",
+      },
     ],
     Commerce: [
-      "B.Com. (Applied Economics)",
-      "B.Com. (Tax Procedure)",
-      "B.Com. (Computer Application)",
-      "B.Com. (Marketing)",
-      "B.Com. (Honours - Account)",
-      "B.Com. (Honours - Management)",
-      "M.Com.",
+      {
+        name: "B.Com. (Applied Economics)",
+        eligibility: "Higher Secondary (10+2) any stream except Arts",
+        duration: "3 Years",
+        details: "Undergraduate commerce degree with Applied Economics specialization.",
+      },
+      {
+        name: "B.Com. (Tax Procedure)",
+        eligibility: "Higher Secondary (10+2) any stream except Arts",
+        duration: "3 Years",
+        details: "Specialization focused on taxation procedures and practices.",
+      },
+      {
+        name: "B.Com. (Computer Application)",
+        eligibility: "Higher Secondary (10+2) any stream except Arts",
+        duration: "3 Years",
+        details: "Commerce program with emphasis on computer applications.",
+      },
+      {
+        name: "B.Com. (Marketing)",
+        eligibility: "Higher Secondary (10+2) any stream except Arts",
+        duration: "3 Years",
+        details: "Undergraduate program centered on marketing domain.",
+      },
+      {
+        name: "B.Com. (Honours - Account)",
+        eligibility: "Higher Secondary (10+2) any stream except Arts",
+        duration: "3 Years",
+        details: "Honours specialization in Accountancy.",
+      },
+      {
+        name: "B.Com. (Honours - Management)",
+        eligibility: "Higher Secondary (10+2) any stream except Arts",
+        duration: "3 Years",
+        details: "Honours specialization in Management.",
+      },
+      {
+        name: "M.Com.",
+        eligibility: "Graduation in Commerce",
+        duration: "2 Years (4 Semesters)",
+        details: "Postgraduate program in Commerce.",
+      },
     ],
     Arts: [
-      "B.A. (History - Political Science - Sociology)",
-      "B.A. (Hindi - History - Sociology)",
-      "B.A. (Hindi - History - Political Science)",
-      "B.A. (Economics - Hindi - Political Science)",
-      "B.A. (Economics - Political Science - Sociology)",
-      "B.A. (Computer - History - Sociology)",
+      {
+        name: "B.A. (History - Political Science - Sociology)",
+        eligibility: "Higher Secondary (10+2)",
+        duration: "3 Years",
+        details: "Undergraduate arts combination in History, Political Science and Sociology.",
+      },
+      {
+        name: "B.A. (Hindi - History - Sociology)",
+        eligibility: "Higher Secondary (10+2)",
+        duration: "3 Years",
+        details: "Combination of Hindi, History and Sociology.",
+      },
+      {
+        name: "B.A. (Hindi - History - Political Science)",
+        eligibility: "Higher Secondary (10+2)",
+        duration: "3 Years",
+        details: "Combination of Hindi, History and Political Science.",
+      },
+      {
+        name: "B.A. (Economics - Hindi - Political Science)",
+        eligibility: "Higher Secondary (10+2)",
+        duration: "3 Years",
+        details: "Combination of Economics, Hindi and Political Science.",
+      },
+      {
+        name: "B.A. (Economics - Political Science - Sociology)",
+        eligibility: "Higher Secondary (10+2)",
+        duration: "3 Years",
+        details: "Combination of Economics, Political Science and Sociology.",
+      },
+      {
+        name: "B.A. (Computer - History - Sociology)",
+        eligibility: "Higher Secondary (10+2)",
+        duration: "3 Years",
+        details: "Combination of Computer, History and Sociology.",
+      },
     ],
-    "Computer Science": ["B.C.A.", "M.Sc. (Computer Science)"],
-    Management: ["B.B.A."],
-    Law: ["LL.B.", "LL.M."],
-    "Library Science": ["B.Lib."],
-    "Social Work": ["MSW"],
+    "Computer Science": [
+      {
+        name: "B.C.A.",
+        eligibility: "Higher Secondary (10+2) with Mathematics",
+        duration: "3 Years",
+        details: "Bachelor's in Computer Applications.",
+      },
+      {
+        name: "M.Sc. (Computer Science)",
+        eligibility: "Graduation in Computer Science/Application",
+        duration: "2 Years (4 Semesters)",
+        details: "Postgraduate program in Computer Science.",
+      },
+    ],
+    Management: [
+      { name: "B.B.A.", eligibility: "Higher Secondary (10+2)", duration: "3 Years", details: "Bachelor of Business Administration." },
+    ],
+    Law: [
+      { name: "LL.B.", eligibility: "Graduation in any stream", duration: "3 Years", details: "Bachelor of Laws." },
+      { name: "LL.M.", eligibility: "Graduation in LL.B.", duration: "2 Years (4 Semesters)", details: "Master of Laws." },
+    ],
+    "Library Science": [
+      { name: "B.Lib.", eligibility: "Graduation in any stream", duration: "1 Year (2 Semesters)", details: "Bachelor of Library and Information Science." },
+    ],
+    "Social Work": [
+      { name: "MSW", eligibility: "Graduation in any stream", duration: "2 Years (4 Semesters)", details: "Master of Social Work." },
+    ],
   };
 
   const facultyColors: Record<string, string> = {
@@ -423,12 +537,14 @@ export default function Index() {
                       <CardContent className="p-0">
                         <div className={`h-24 bg-gradient-to-br ${facultyColors[fac]} flex items-center justify-center`}>
                           <h3 className="text-lg font-serif font-bold text-white text-center px-4">
-                            {prog}
+                            {prog.name}
                           </h3>
                         </div>
-                        <div className="p-6">
-                          <p className="text-sm text-muted-foreground">Faculty: <span className="font-medium text-college-navy">{fac}</span></p>
-                          <Button variant="outline" className="w-full mt-4 border-college-navy text-college-navy hover:bg-college-navy hover:text-white">
+                        <div className="p-6 space-y-2">
+                          <p className="text-sm text-muted-foreground"><span className="font-semibold text-college-navy">Eligibility:</span> {prog.eligibility}</p>
+                          <p className="text-sm text-muted-foreground"><span className="font-semibold text-college-navy">Duration:</span> {prog.duration}</p>
+                          <p className="text-sm text-muted-foreground"><span className="font-semibold text-college-navy">Details:</span> {prog.details}</p>
+                          <Button variant="outline" className="w-full mt-2 border-college-navy text-college-navy hover:bg-college-navy hover:text-white">
                             Learn More
                           </Button>
                         </div>
