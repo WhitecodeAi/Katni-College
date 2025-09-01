@@ -20,7 +20,7 @@ export const leaders: Leader[] = [
     imageUrl:
       "https://cdn.builder.io/api/v1/image/assets%2F19009a265873491e8d25a2fc6b43dc4d%2F95220ce947ac4fb78fbedbe51c82a03f?format=webp&width=800",
     quote:
-      "Greeting and good wishes to everyone it gives me a great delight to extend a warm welcome...",
+      "Greeting and good wishes to everyone it gives me a great delight to extend a warm welcome to both existing and prospective students and thir parents",
   },
   {
     name: "Shri Amit Verma",
