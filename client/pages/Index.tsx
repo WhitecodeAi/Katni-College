@@ -582,15 +582,17 @@ export default function Index() {
                   {progs.map((prog, idx) => (
                     <Card key={idx} className="bg-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                       <CardContent className="p-0">
-                        <div className={`h-24 bg-gradient-to-br ${programGradients[idx % programGradients.length]} flex items-center justify-center`}>
-                          <div className="flex items-center gap-2">
-                            <span aria-hidden>
-                              {programIcons[idx % programIcons.length]}
-                            </span>
-                            <h3 className="text-lg font-serif font-bold text-white text-center px-1">
-                              {prog.name}
-                            </h3>
-                          </div>
+                        <div className="relative h-28">
+                          <img
+                            src={(facultyImages[fac] && facultyImages[fac][idx % facultyImages[fac].length]) || fallbackImage}
+                            alt={`${prog.name} banner`}
+                            className="absolute inset-0 w-full h-full object-cover"
+                            loading="lazy"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+                          <h3 className="absolute bottom-3 left-4 right-4 text-lg font-serif font-bold text-white">
+                            {prog.name}
+                          </h3>
                         </div>
                         <div className="p-6 space-y-2">
                           <p className="text-sm text-muted-foreground"><span className="font-semibold text-college-navy">Eligibility:</span> {prog.eligibility}</p>
