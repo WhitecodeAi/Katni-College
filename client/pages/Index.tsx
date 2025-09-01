@@ -256,7 +256,7 @@ export default function Index() {
     ],
   };
 
-  const fallbackImage = "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1200&q=60";
+  const fallbackImage = "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&quot";
 
   return (
     <div className="bg-white">
