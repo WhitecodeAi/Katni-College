@@ -509,7 +509,7 @@ export default function Index() {
       </section>
 
       {/* Contact CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-college-burgundy to-college-navy">
+      <section className="py-20 bg-college-navy">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-serif font-bold text-white mb-6">
             Ready to Begin Your Journey?
