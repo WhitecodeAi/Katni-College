@@ -33,7 +33,7 @@ export default function Header() {
                 <span className="group-hover:text-college-gold transition-colors">+91 761 XXX XXXX</span>
               </div>
             </div>
-            <div className="flex items-center space-x-4">
+            <div className="hidden md:flex items-center space-x-4">
               <a href="/alumni" className="hover:text-college-gold transition-colors text-xs font-medium">
                 ALUMNI
               </a>
