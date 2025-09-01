@@ -118,36 +118,42 @@ export default function Index() {
         eligibility: "Higher Secondary (10+2)",
         duration: "3 Years",
         details: "Undergraduate arts combination in History, Political Science and Sociology.",
+        imageUrl: "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       },
       {
         name: "B.A. (Hindi - History - Sociology)",
         eligibility: "Higher Secondary (10+2)",
         duration: "3 Years",
         details: "Combination of Hindi, History and Sociology.",
+        imageUrl: "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       },
       {
         name: "B.A. (Hindi - History - Political Science)",
         eligibility: "Higher Secondary (10+2)",
         duration: "3 Years",
         details: "Combination of Hindi, History and Political Science.",
+        imageUrl: "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       },
       {
         name: "B.A. (Economics - Hindi - Political Science)",
         eligibility: "Higher Secondary (10+2)",
         duration: "3 Years",
         details: "Combination of Economics, Hindi and Political Science.",
+        imageUrl: "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       },
       {
         name: "B.A. (Economics - Political Science - Sociology)",
         eligibility: "Higher Secondary (10+2)",
         duration: "3 Years",
         details: "Combination of Economics, Political Science and Sociology.",
+        imageUrl: "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       },
       {
         name: "B.A. (Computer - History - Sociology)",
         eligibility: "Higher Secondary (10+2)",
         duration: "3 Years",
         details: "Combination of Computer, History and Sociology.",
+        imageUrl: "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       },
     ],
     "Computer Science": [
@@ -156,20 +162,26 @@ export default function Index() {
         eligibility: "Higher Secondary (10+2) with Mathematics",
         duration: "3 Years",
         details: "Bachelor's in Computer Applications.",
+        imageUrl: "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       },
       {
         name: "M.Sc. (Computer Science)",
         eligibility: "Graduation in Computer Science/Application",
         duration: "2 Years (4 Semesters)",
         details: "Postgraduate program in Computer Science.",
+        imageUrl: "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       },
     ],
     Management: [
-      { name: "B.B.A.", eligibility: "Higher Secondary (10+2)", duration: "3 Years", details: "Bachelor of Business Administration." },
+      {
+        name: "B.B.A.", eligibility: "Higher Secondary (10+2)", duration: "3 Years", details: "Bachelor of Business Administration.",
+        imageUrl: "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+},
+     
     ],
     Law: [
       { name: "LL.B.", eligibility: "Graduation in any stream", duration: "3 Years", details: "Bachelor of Laws." },
-      { name: "LL.M.", eligibility: "Graduation in LL.B.", duration: "2 Years (4 Semesters)", details: "Master of Laws." },
+      { name: "LL.M.", eligibility: "Graduation in LL.B.", duration: "2 Years (4 Semesters)",   imageUrl: "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",},
     ],
     "Library Science": [
       { name: "B.Lib.", eligibility: "Graduation in any stream", duration: "1 Year (2 Semesters)", details: "Bachelor of Library and Information Science." },
