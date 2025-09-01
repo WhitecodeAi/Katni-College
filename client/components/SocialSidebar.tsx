@@ -24,7 +24,7 @@ export default function SocialSidebar() {
         
         <a 
           href="#" 
-          className="w-10 h-10 bg-blue-700 hover:bg-blue-800 text-white rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-lg group"
+          className="hidden"
           title="LinkedIn"
         >
           <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -34,7 +34,7 @@ export default function SocialSidebar() {
         
         <a 
           href="#" 
-          className="w-10 h-10 bg-pink-600 hover:bg-pink-700 text-white rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-lg group"
+          className="hidden"
           title="Instagram"
         >
           <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
