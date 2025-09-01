@@ -1,4 +1,4 @@
-import { ChevronRight, ChevronLeft, Users, BookOpen, Award, MapPin, Phone, Mail, Calendar, FileText } from "lucide-react";
+import { ChevronRight, ChevronLeft, Users, BookOpen, Award, MapPin, Phone, Mail, Calendar, FileText, GraduationCap, Microscope, Atom, Cpu, Briefcase, Scale, Library } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
@@ -177,6 +177,26 @@ export default function Index() {
     "Library Science": "from-college-navy to-college-burgundy",
     "Social Work": "from-college-gold to-college-sage",
   };
+
+  const programGradients = [
+    "from-college-navy to-college-burgundy",
+    "from-college-gold to-college-sage",
+    "from-college-burgundy to-college-navy",
+    "from-college-sage to-college-gold",
+    "from-college-navy to-college-gold",
+    "from-college-gold to-college-bronze",
+  ];
+
+  const programIcons = [
+    <GraduationCap className="h-6 w-6 text-white" />,
+    <Microscope className="h-6 w-6 text-white" />,
+    <Atom className="h-6 w-6 text-white" />,
+    <Cpu className="h-6 w-6 text-white" />,
+    <BookOpen className="h-6 w-6 text-white" />,
+    <Briefcase className="h-6 w-6 text-white" />,
+    <Scale className="h-6 w-6 text-white" />,
+    <Library className="h-6 w-6 text-white" />,
+  ];
 
   return (
     <div className="bg-white">
@@ -535,10 +555,15 @@ export default function Index() {
                   {progs.map((prog, idx) => (
                     <Card key={idx} className="bg-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                       <CardContent className="p-0">
-                        <div className={`h-24 bg-gradient-to-br ${facultyColors[fac]} flex items-center justify-center`}>
-                          <h3 className="text-lg font-serif font-bold text-white text-center px-4">
-                            {prog.name}
-                          </h3>
+                        <div className={`h-24 bg-gradient-to-br ${programGradients[idx % programGradients.length]} flex items-center justify-center`}>
+                          <div className="flex items-center gap-2">
+                            <span aria-hidden>
+                              {programIcons[idx % programIcons.length]}
+                            </span>
+                            <h3 className="text-lg font-serif font-bold text-white text-center px-1">
+                              {prog.name}
+                            </h3>
+                          </div>
                         </div>
                         <div className="p-6 space-y-2">
                           <p className="text-sm text-muted-foreground"><span className="font-semibold text-college-navy">Eligibility:</span> {prog.eligibility}</p>
