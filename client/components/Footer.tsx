@@ -95,8 +95,8 @@ export default function Footer() {
               <div className="flex items-start space-x-3">
                 <MapPin size={16} className="text-college-gold mt-1 flex-shrink-0" />
                 <div className="text-sm text-gray-300">
-                  <p>KACC Campus</p>
-                  <p>Katni, Madhya Pradesh</p>
+                  <p>Saraswati School Road</p>
+                  <p>Nai Basti, Madhya Pradesh</p>
                   <p>India - 483501</p>
                 </div>
               </div>

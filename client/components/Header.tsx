@@ -81,7 +81,7 @@ export default function Header() {
                 <div className="hidden md:flex items-center space-x-3">
                   <div className="w-6 h-0.5 bg-yellow-400 hidden md:block"></div>
                   <p className="text-sm text-college-charcoal font-medium">
-                    Nai Basti, Katni, MP, India
+                    Saraswati School Road, Nai Basti, Katni, MP, India
                   </p>
                   <div className="w-6 h-0.5 bg-yellow-400 hidden md:block"></div>
                 </div>
