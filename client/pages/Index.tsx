@@ -37,12 +37,14 @@ export default function Index() {
         eligibility: "Higher Secondary (10+2) Biology",
         duration: "3 Years",
         details: "Undergraduate program with Biotechnology, Chemistry and Computer Science.",
+        imageUrl: "https://plus.unsplash.com/premium_photo-1661432575489-b0400f4fea58?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       },
       {
         name: "B.Sc. (Chemistry - Mathematics - Physics)",
         eligibility: "Higher Secondary (10+2)",
         duration: "3 Years",
         details: "Core science combination covering Chemistry, Mathematics and Physics.",
+        imageUrl: "https://plus.unsplash.com/premium_photo-1661432575489-b0400f4fea58?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       },
       {
         name: "B.Sc. (Computer Science - Mathematics - Physics)",
