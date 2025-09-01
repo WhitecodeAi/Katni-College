@@ -526,12 +526,13 @@ export default function Index() {
               Apply for Admission
               <ChevronRight className="ml-2 h-5 w-5" />
             </Button>
-            <Button 
-              size="lg" 
-              variant="outline" 
-              className="border-white text-white hover:bg-white hover:text-college-navy font-semibold text-lg px-8 py-4 h-auto"
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="bg-white text-college-navy hover:bg-white/90 font-semibold text-lg px-8 py-4 h-auto"
             >
-              Download Brochure
+              <a href="/brochure">Download Brochure</a>
             </Button>
           </div>
           
