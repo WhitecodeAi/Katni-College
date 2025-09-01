@@ -597,7 +597,7 @@ export default function Index() {
                         <div className="p-6 space-y-2">
                           <p className="text-sm text-muted-foreground"><span className="font-semibold text-college-navy">Eligibility:</span> {prog.eligibility}</p>
                           <p className="text-sm text-muted-foreground"><span className="font-semibold text-college-navy">Duration:</span> {prog.duration}</p>
-                          <p className="text-sm text-muted-foreground"><span className="font-semibold text-college-navy">Details:</span> {prog.details}</p>
+                          <p className="text-sm text-muted-foreground"><span className="font-semibold text-college-navy">Details:</span></p>
                           <Button variant="outline" className="w-full mt-2 border-college-navy text-college-navy hover:bg-college-navy hover:text-white">
                             Learn More
                           </Button>
