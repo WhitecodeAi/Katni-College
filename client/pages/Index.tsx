@@ -80,6 +80,9 @@ export default function Index() {
               >
                 Explore Programs
               </Button>
+              <Button asChild size="lg" variant="outline" className="border-2 border-college-navy text-college-navy hover:bg-college-navy hover:text-white font-bold text-lg px-10 py-5 h-auto rounded-xl">
+                <a href="/brochure">Download Brochure</a>
+              </Button>
             </div>
           </div>
         </div>
