@@ -64,7 +64,7 @@ export default function NewsSection() {
                   <div className="w-8 h-8 rounded-full bg-white/90 flex items-center justify-center">
                     <Megaphone className="h-4 w-4 text-college-sage" />
                   </div>
-                  <h3 className="font-bold text-college-navy text-lg tracking-wide">EVENTS & NOTICES</h3>
+                  <h3 className="font-bold text-college-navy text-lg tracking-wide">GENERAL NOTICES</h3>
                 </div>
               </div>
               <div className="p-6 space-y-4">
