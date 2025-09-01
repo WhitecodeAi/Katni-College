@@ -96,7 +96,7 @@ export default function Footer() {
                 <MapPin size={16} className="text-college-gold mt-1 flex-shrink-0" />
                 <div className="text-sm text-gray-300">
                   <p>Saraswati School Road</p>
-                  <p>Nai Basti, Madhya Pradesh</p>
+                  <p>Nai Basti, Madhya Pradesh,</p>
                   <p>India - 483501</p>
                 </div>
               </div>
