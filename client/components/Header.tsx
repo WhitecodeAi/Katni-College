@@ -50,7 +50,7 @@ export default function Header() {
                 CAREERS
               </a>
               <a href="/contact" className="hover:text-college-gold transition-colors text-xs font-medium">
-                CONTACT US
+                CONTACT
               </a>
             </div>
           </div>
