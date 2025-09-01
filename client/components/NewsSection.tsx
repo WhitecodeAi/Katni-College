@@ -84,7 +84,10 @@ export default function NewsSection() {
 function NewsRow({ text, date, border = true }: { text: string; date: string; border?: boolean }) {
   return (
     <div className={`flex justify-between items-start py-3 ${border ? "border-b border-college-cream/50" : ""}`}>
-      <p className="text-sm text-college-navy font-medium leading-relaxed pr-3">{text}</p>
+      <div className="flex items-start gap-2 pr-3">
+        <span className="mt-2 h-2 w-2 rounded-full bg-college-navy flex-shrink-0" aria-hidden="true"></span>
+        <p className="text-sm text-college-navy font-medium leading-relaxed">{text}</p>
+      </div>
       <span className="text-xs text-muted-foreground whitespace-nowrap flex items-center gap-1">
         <Calendar className="h-3.5 w-3.5" />
         {date}
