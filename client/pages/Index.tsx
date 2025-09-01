@@ -1,6 +1,7 @@
 import { ChevronRight, ChevronLeft, Users, BookOpen, Award, MapPin, Phone, Mail, Calendar, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { useState, useEffect } from "react";
 import NewsSection from "@/components/NewsSection";
 import LeadershipCard from "@/components/LeadershipCard";
@@ -19,6 +20,49 @@ export default function Index() {
 
   const [visionExpanded, setVisionExpanded] = useState(false);
   const [missionExpanded, setMissionExpanded] = useState(false);
+
+  const faculties: Record<string, string[]> = {
+    Science: [
+      "B.Sc. (Biotech - Botany - Computer)",
+      "B.Sc. (Biotech - Chemistry - Computer)",
+      "B.Sc. (Chemistry - Mathematics - Physics)",
+      "B.Sc. (Computer Science - Mathematics - Physics)",
+      "B.Sc. (Computer Science - Mathematics - Economics)",
+    ],
+    Commerce: [
+      "B.Com. (Applied Economics)",
+      "B.Com. (Tax Procedure)",
+      "B.Com. (Computer Application)",
+      "B.Com. (Marketing)",
+      "B.Com. (Honours - Account)",
+      "B.Com. (Honours - Management)",
+      "M.Com.",
+    ],
+    Arts: [
+      "B.A. (History - Political Science - Sociology)",
+      "B.A. (Hindi - History - Sociology)",
+      "B.A. (Hindi - History - Political Science)",
+      "B.A. (Economics - Hindi - Political Science)",
+      "B.A. (Economics - Political Science - Sociology)",
+      "B.A. (Computer - History - Sociology)",
+    ],
+    "Computer Science": ["B.C.A.", "M.Sc. (Computer Science)"],
+    Management: ["B.B.A."],
+    Law: ["LL.B.", "LL.M."],
+    "Library Science": ["B.Lib."],
+    "Social Work": ["MSW"],
+  };
+
+  const facultyColors: Record<string, string> = {
+    Science: "from-college-gold to-college-sage",
+    Commerce: "from-college-burgundy to-college-navy",
+    Arts: "from-college-navy to-college-gold",
+    "Computer Science": "from-college-sage to-college-gold",
+    Management: "from-college-burgundy to-college-sage",
+    Law: "from-college-burgundy to-college-navy",
+    "Library Science": "from-college-navy to-college-burgundy",
+    "Social Work": "from-college-gold to-college-sage",
+  };
 
   return (
     <div className="bg-white">
@@ -358,112 +402,43 @@ export default function Index() {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                title: "Science",
-                description: "Undergraduate combinations in science streams",
-                programs: [
-                  "B.Sc. (Biotech - Botany - Computer)",
-                  "B.Sc. (Biotech - Chemistry - Computer)",
-                  "B.Sc. (Chemistry - Mathematics - Physics)",
-                  "B.Sc. (Computer Science - Mathematics - Physics)",
-                  "B.Sc. (Computer Science - Mathematics - Economics)"
-                ],
-                color: "from-college-gold to-college-sage"
-              },
-              {
-                title: "Commerce",
-                description: "Undergraduate and postgraduate commerce programs",
-                programs: [
-                  "B.Com. (Applied Economics)",
-                  "B.Com. (Tax Procedure)",
-                  "B.Com. (Computer Application)",
-                  "B.Com. (Marketing)",
-                  "B.Com. (Honours - Account)",
-                  "B.Com. (Honours - Management)",
-                  "M.Com."
-                ],
-                color: "from-college-burgundy to-college-navy"
-              },
-              {
-                title: "Arts",
-                description: "Undergraduate combinations in arts streams",
-                programs: [
-                  "B.A. (History - Political Science - Sociology)",
-                  "B.A. (Hindi - History - Sociology)",
-                  "B.A. (Hindi - History - Political Science)",
-                  "B.A. (Economics - Hindi - Political Science)",
-                  "B.A. (Economics - Political Science - Sociology)",
-                  "B.A. (Computer - History - Sociology)"
-                ],
-                color: "from-college-navy to-college-gold"
-              },
-              {
-                title: "Computer Science",
-                description: "UG and PG programs in Computer Science",
-                programs: ["B.C.A.", "M.Sc. (Computer Science)"]
-                ,
-                color: "from-college-sage to-college-gold"
-              },
-              {
-                title: "Management",
-                description: "Undergraduate management program",
-                programs: ["B.B.A."]
-                ,
-                color: "from-college-burgundy to-college-sage"
-              },
-              {
-                title: "Law",
-                description: "Undergraduate and postgraduate law programs",
-                programs: ["LL.B.", "LL.M."]
-                ,
-                color: "from-college-burgundy to-college-navy"
-              },
-              {
-                title: "Library Science",
-                description: "Library and information science",
-                programs: ["B.Lib."]
-                ,
-                color: "from-college-navy to-college-burgundy"
-              },
-              {
-                title: "Social Work",
-                description: "Postgraduate social work program",
-                programs: ["MSW"]
-                ,
-                color: "from-college-gold to-college-sage"
-              }
-            ].map((program, index) => (
-              <Card key={index} className="bg-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                <CardContent className="p-0">
-                  <div className={`h-32 bg-gradient-to-br ${program.color} flex items-center justify-center`}>
-                    <h3 className="text-xl font-serif font-bold text-white text-center px-4">
-                      {program.title}
-                    </h3>
-                  </div>
-                  <div className="p-6">
-                    <p className="text-muted-foreground mb-4 leading-relaxed">
-                      {program.description}
-                    </p>
-                    <div className="space-y-2">
-                      <p className="text-sm font-semibold text-college-navy">Programs:</p>
-                      <div className="flex flex-wrap gap-2">
-                        {program.programs.map((prog, idx) => (
-                          <span key={idx} className="px-3 py-1 bg-college-cream text-college-navy text-sm rounded-full font-medium">
+          <Tabs defaultValue="Science" className="w-full">
+            <TabsList className="mx-auto mb-10 bg-college-cream text-college-navy">
+              {Object.keys(faculties).map((fac) => (
+                <TabsTrigger
+                  key={fac}
+                  value={fac}
+                  className="data-[state=active]:bg-college-gold data-[state=active]:text-college-navy"
+                >
+                  {fac}
+                </TabsTrigger>
+              ))}
+            </TabsList>
+
+            {Object.entries(faculties).map(([fac, progs]) => (
+              <TabsContent key={fac} value={fac}>
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {progs.map((prog, idx) => (
+                    <Card key={idx} className="bg-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                      <CardContent className="p-0">
+                        <div className={`h-24 bg-gradient-to-br ${facultyColors[fac]} flex items-center justify-center`}>
+                          <h3 className="text-lg font-serif font-bold text-white text-center px-4">
                             {prog}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                    <Button variant="outline" className="w-full mt-4 border-college-navy text-college-navy hover:bg-college-navy hover:text-white">
-                      Learn More
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
+                          </h3>
+                        </div>
+                        <div className="p-6">
+                          <p className="text-sm text-muted-foreground">Faculty: <span className="font-medium text-college-navy">{fac}</span></p>
+                          <Button variant="outline" className="w-full mt-4 border-college-navy text-college-navy hover:bg-college-navy hover:text-white">
+                            Learn More
+                          </Button>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              </TabsContent>
             ))}
-          </div>
+          </Tabs>
         </div>
       </section>
 
