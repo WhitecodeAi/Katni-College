@@ -56,6 +56,7 @@ export default function Index() {
         eligibility: "Higher Secondary (10+2)",
         duration: "3 Years",
         details: "Interdisciplinary program spanning CS, Mathematics and Economics.",
+        imageUrl: "https://plus.unsplash.com/premium_photo-1661432575489-b0400f4fea58?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       },
     ],
     Commerce: [
@@ -64,12 +65,14 @@ export default function Index() {
         eligibility: "Higher Secondary (10+2) any stream except Arts",
         duration: "3 Years",
         details: "Undergraduate commerce degree with Applied Economics specialization.",
+        imageUrl: "https://plus.unsplash.com/premium_photo-1661432575489-b0400f4fea58?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       },
       {
         name: "B.Com. (Tax Procedure)",
         eligibility: "Higher Secondary (10+2) any stream except Arts",
         duration: "3 Years",
         details: "Specialization focused on taxation procedures and practices.",
+         imageUrl: "https://plus.unsplash.com/premium_photo-1661432575489-b0400f4fea58?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       },
       {
         name: "B.Com. (Computer Application)",
