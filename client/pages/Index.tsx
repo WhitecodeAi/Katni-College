@@ -110,10 +110,13 @@ export default function Index() {
                   Our Vision
                 </h3>
                 <p className="text-muted-foreground leading-relaxed text-center">
-                  To be a premier autonomous institution of higher learning that fosters
-                  intellectual growth, innovation, and social responsibility, preparing
-                  global citizens who contribute meaningfully to society and lead with
-                  integrity and wisdom.
+                  Vision to be recognised far and wide as an
+                  institution which provides need-based,
+                  skill-integrated, cost-effective, quality holistic
+                  education, to prepare the students into globally
+                  competitive, employable and responsivle citizens
+                  tomorrow. KACC is committed to becoming a centre of
+                  academic excellence.
                 </p>
               </CardContent>
             </Card>
@@ -129,10 +132,12 @@ export default function Index() {
                   Our Mission
                 </h3>
                 <p className="text-muted-foreground leading-relaxed text-center">
-                  To provide quality education through innovative teaching methodologies,
-                  research excellence, and holistic development programs. We are committed
-                  to nurturing critical thinking, ethical values, and lifelong learning
-                  while serving the educational needs of our community.
+                  Our mission is to create and acquire relevant
+                  knowledge along with skills and global competencies
+                  and disseminate the same among students. The college
+                  fosters holistic education through relevant
+                  curriculum, programmes and pedagogic innovations with
+                  focus on employability and self-employment.
                 </p>
               </CardContent>
             </Card>
