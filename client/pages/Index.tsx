@@ -308,15 +308,8 @@ export default function Index() {
                 size="lg"
                 className="bg-gradient-to-r from-college-gold to-college-bronze hover:from-college-bronze hover:to-college-gold text-white font-bold text-lg px-10 py-5 h-auto rounded-xl"
               >
-                Apply for Admission
-                <ChevronRight className="ml-3 h-5 w-5" />
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-2 border-college-navy text-college-navy hover:bg-college-navy hover:text-white font-bold text-lg px-10 py-5 h-auto rounded-xl"
-              >
                 Explore Programs
+                <ChevronRight className="ml-3 h-5 w-5" />
               </Button>
               <Button asChild size="lg" variant="outline" className="border-2 border-college-navy text-college-navy hover:bg-college-navy hover:text-white font-bold text-lg px-10 py-5 h-auto rounded-xl">
                 <a href="/brochure">Download Brochure</a>
