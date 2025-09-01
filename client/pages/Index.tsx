@@ -583,7 +583,7 @@ export default function Index() {
                     <Card key={idx} className="bg-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                       <CardContent className="p-0">
                         <div
-                          className="relative h-28 overflow-hidden rounded-t-lg"
+                          className="relative h-36 overflow-hidden rounded-t-lg"
                           style={{
                             backgroundImage: `url('${(facultyImages[fac] && facultyImages[fac][idx % facultyImages[fac].length]) || fallbackImage}')`,
                             backgroundSize: 'cover',
