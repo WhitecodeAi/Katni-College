@@ -75,10 +75,10 @@ export default function Header() {
               </div>
 
               <div className="flex flex-col justify-center space-y-2">
-                <h1 className="text-2xl font-serif font-bold text-college-navy tracking-tight leading-tight">
+                <h1 className="text-xl sm:text-2xl md:text-3xl font-serif font-bold text-college-navy tracking-tight leading-tight">
                   KATNI ARTS & COMMERCE COLLEGE
                 </h1>
-                <div className="flex items-center space-x-3">
+                <div className="hidden md:flex items-center space-x-3">
                   <div className="w-6 h-0.5 bg-yellow-400 hidden md:block"></div>
                   <p className="text-sm text-college-charcoal font-medium">
                     Near Railway Station, Katni - 483501, MP, India
