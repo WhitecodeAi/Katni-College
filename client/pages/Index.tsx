@@ -582,13 +582,14 @@ export default function Index() {
                   {progs.map((prog, idx) => (
                     <Card key={idx} className="bg-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                       <CardContent className="p-0">
-                        <div className="relative h-28">
-                          <img
-                            src={(facultyImages[fac] && facultyImages[fac][idx % facultyImages[fac].length]) || fallbackImage}
-                            alt={`${prog.name} banner`}
-                            className="absolute inset-0 w-full h-full object-cover"
-                            loading="lazy"
-                          />
+                        <div
+                          className="relative h-28 overflow-hidden rounded-t-lg"
+                          style={{
+                            backgroundImage: `url('${(facultyImages[fac] && facultyImages[fac][idx % facultyImages[fac].length]) || fallbackImage}')`,
+                            backgroundSize: 'cover',
+                            backgroundPosition: 'center',
+                          }}
+                        >
                           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
                           <h3 className="absolute bottom-3 left-4 right-4 text-lg font-serif font-bold text-white">
                             {prog.name}
