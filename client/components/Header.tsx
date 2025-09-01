@@ -79,11 +79,11 @@ export default function Header() {
                   KATNI ARTS & COMMERCE COLLEGE
                 </h1>
                 <div className="flex items-center space-x-3">
-                  <div className="w-6 h-0.5 bg-yellow-400"></div>
+                  <div className="w-6 h-0.5 bg-yellow-400 hidden md:block"></div>
                   <p className="text-sm text-college-charcoal font-medium">
                     Near Railway Station, Katni - 483501, MP, India
                   </p>
-                  <div className="w-6 h-0.5 bg-yellow-400"></div>
+                  <div className="w-6 h-0.5 bg-yellow-400 hidden md:block"></div>
                 </div>
               </div>
             </div>
