@@ -21,7 +21,7 @@ export default function Index() {
   const [visionExpanded, setVisionExpanded] = useState(false);
   const [missionExpanded, setMissionExpanded] = useState(false);
 
-  type Program = { name: string; eligibility: string; duration: string; details: string };
+  type Program = { name: string; eligibility: string; duration: string; details: string; imageUrl?: string };
 
   const faculties: Record<string, Program[]> = {
     Science: [
@@ -30,6 +30,7 @@ export default function Index() {
         eligibility: "Higher Secondary (10+2) Biology",
         duration: "3 Years",
         details: "Undergraduate program combining Biotechnology, Botany and Computer studies.",
+        imageUrl: "https://images.unsplash.com/photo-1581091012184-7f06b180a3a1?auto=format&fit=crop&w=1200&q=60",
       },
       {
         name: "B.Sc. (Biotech - Chemistry - Computer)",
@@ -48,6 +49,7 @@ export default function Index() {
         eligibility: "Higher Secondary (10+2)",
         duration: "3 Years",
         details: "Focus on Computer Science along with Mathematics and Physics.",
+        imageUrl: "https://images.unsplash.com/photo-1518779578993-ec3579fee39f?auto=format&fit=crop&w=1200&q=60",
       },
       {
         name: "B.Sc. (Computer Science - Mathematics - Economics)",
@@ -585,7 +587,7 @@ export default function Index() {
                         <div
                           className="relative h-36 overflow-hidden rounded-t-lg"
                           style={{
-                            backgroundImage: `url('${(facultyImages[fac] && facultyImages[fac][idx % facultyImages[fac].length]) || fallbackImage}')`,
+                            backgroundImage: `url('${prog.imageUrl || fallbackImage}')`,
                             backgroundSize: 'cover',
                             backgroundPosition: 'center',
                           }}
