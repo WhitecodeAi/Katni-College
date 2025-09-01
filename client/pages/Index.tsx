@@ -361,40 +361,78 @@ export default function Index() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                title: "Arts & Humanities",
-                description: "Literature, History, Philosophy, Languages",
-                programs: ["B.A.", "M.A.", "Ph.D."],
-                color: "from-college-navy to-college-burgundy"
-              },
-              {
-                title: "Science & Technology",
-                description: "Physics, Chemistry, Mathematics, Computer Science",
-                programs: ["B.Sc.", "M.Sc.", "Ph.D."],
+                title: "Science",
+                description: "Undergraduate combinations in science streams",
+                programs: [
+                  "B.Sc. (Biotech - Botany - Computer)",
+                  "B.Sc. (Biotech - Chemistry - Computer)",
+                  "B.Sc. (Chemistry - Mathematics - Physics)",
+                  "B.Sc. (Computer Science - Mathematics - Physics)",
+                  "B.Sc. (Computer Science - Mathematics - Economics)"
+                ],
                 color: "from-college-gold to-college-sage"
               },
               {
-                title: "Commerce & Management",
-                description: "Accounting, Economics, Business Administration",
-                programs: ["B.Com.", "M.Com.", "MBA"],
+                title: "Commerce",
+                description: "Undergraduate and postgraduate commerce programs",
+                programs: [
+                  "B.Com. (Applied Economics)",
+                  "B.Com. (Tax Procedure)",
+                  "B.Com. (Computer Application)",
+                  "B.Com. (Marketing)",
+                  "B.Com. (Honours - Account)",
+                  "B.Com. (Honours - Management)",
+                  "M.Com."
+                ],
                 color: "from-college-burgundy to-college-navy"
               },
               {
-                title: "Law",
-                description: "Constitutional Law, Corporate Law, Criminal Law",
-                programs: ["LL.B.", "LL.M.", "Ph.D."],
-                color: "from-college-sage to-college-gold"
-              },
-              {
-                title: "Social Sciences",
-                description: "Sociology, Psychology, Political Science",
-                programs: ["B.A.", "M.A.", "Ph.D."],
+                title: "Arts",
+                description: "Undergraduate combinations in arts streams",
+                programs: [
+                  "B.A. (History - Political Science - Sociology)",
+                  "B.A. (Hindi - History - Sociology)",
+                  "B.A. (Hindi - History - Political Science)",
+                  "B.A. (Economics - Hindi - Political Science)",
+                  "B.A. (Economics - Political Science - Sociology)",
+                  "B.A. (Computer - History - Sociology)"
+                ],
                 color: "from-college-navy to-college-gold"
               },
               {
-                title: "Education",
-                description: "Teaching Methodology, Educational Psychology",
-                programs: ["B.Ed.", "M.Ed.", "Ph.D."],
+                title: "Computer Science",
+                description: "UG and PG programs in Computer Science",
+                programs: ["B.C.A.", "M.Sc. (Computer Science)"]
+                ,
+                color: "from-college-sage to-college-gold"
+              },
+              {
+                title: "Management",
+                description: "Undergraduate management program",
+                programs: ["B.B.A."]
+                ,
                 color: "from-college-burgundy to-college-sage"
+              },
+              {
+                title: "Law",
+                description: "Undergraduate and postgraduate law programs",
+                programs: ["LL.B.", "LL.M."]
+                ,
+                color: "from-college-burgundy to-college-navy"
+              },
+              {
+                title: "Library Science",
+                description: "Library and information science",
+                programs: ["B.Lib."]
+                ,
+                color: "from-college-navy to-college-burgundy"
+              },
+              {
+                title: "Social Work",
+                description: "Postgraduate social work program",
+                programs: ["MSW"]
+                ,
+                color: "from-college-gold to-college-sage"
               }
             ].map((program, index) => (
               <Card key={index} className="bg-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
