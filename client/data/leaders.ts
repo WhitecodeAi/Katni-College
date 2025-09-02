@@ -12,7 +12,7 @@ export const leaders: Leader[] = [
     imageUrl:
       "https://cdn.builder.io/api/v1/image/assets%2F19009a265873491e8d25a2fc6b43dc4d%2Fe1ced84cd4a14c70b19921fc1f7614e7?format=webp&width=800",
     quote:
-      "Let me welcome you to our fold. As the Secretary of our esteemed college, I am honored to address you today and share our collective vision and commitment to excellence in education...",
+      "Let me welcome you to our fold. As the Secretary of our esteemed college, I am honored to address you today and share our collective vision and commitment...",
   },
   {
     name: "Smt. Sushma Jai Chadha",
