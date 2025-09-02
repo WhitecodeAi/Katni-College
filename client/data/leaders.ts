@@ -36,6 +36,6 @@ export const leaders: Leader[] = [
     imageUrl:
       "https://cdn.builder.io/api/v1/image/assets%2F19009a265873491e8d25a2fc6b43dc4d%2F0968f29aaf7440928eb7586e7919e4a6?format=webp&width=800",
     quote:
-      "Education is not just about books and exams - it's about building character, nurturing valus and preparing for life. We at KACC college working really hard and inching towards that goal...",
+      "Education is not just about books and exams - it's about building character, nurturing valus and preparing for life. We at KACC college working really hard...",
   },
 ];
