@@ -748,29 +748,6 @@ export default function Index() {
             </Button>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8 mt-16 pt-16 border-t border-college-cream">
-            <div className="text-center">
-              <div className="w-12 h-12 bg-college-gold rounded-full flex items-center justify-center mx-auto mb-4">
-                <MapPin className="h-6 w-6 text-college-navy" />
-              </div>
-              <h3 className="text-lg font-semibold text-college-navy mb-2">Visit Campus</h3>
-              <p className="text-college-charcoal">Katni, Madhya Pradesh</p>
-            </div>
-            <div className="text-center">
-              <div className="w-12 h-12 bg-college-gold rounded-full flex items-center justify-center mx-auto mb-4">
-                <Phone className="h-6 w-6 text-college-navy" />
-              </div>
-              <h3 className="text-lg font-semibold text-college-navy mb-2">Call Us</h3>
-              <p className="text-college-charcoal">+91 761 XXX XXXX</p>
-            </div>
-            <div className="text-center">
-              <div className="w-12 h-12 bg-college-gold rounded-full flex items-center justify-center mx-auto mb-4">
-                <Mail className="h-6 w-6 text-college-navy" />
-              </div>
-              <h3 className="text-lg font-semibold text-college-navy mb-2">Email Us</h3>
-              <p className="text-college-charcoal">info@kacckatni.org</p>
-            </div>
-          </div>
         </div>
       </section>
     </div>
