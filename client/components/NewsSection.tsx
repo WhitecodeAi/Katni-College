@@ -1,5 +1,6 @@
 import { Calendar, Megaphone, School, FileText } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 export default function NewsSection() {
   return (
@@ -32,6 +33,11 @@ export default function NewsSection() {
                 <NewsRow text="Merit List for UG Programs Published" date="12 Dec 2024" />
                 <NewsRow text="Scholarship Application Forms Available" date="10 Dec 2024" />
                 <NewsRow text="Last Date for Online Application Extended" date="08 Dec 2024" border={false} />
+                <div className="pt-2">
+                  <Button asChild variant="outline" className="w-full border-college-navy text-college-navy hover:bg-college-navy hover:text-white">
+                    <a href="/admissions">View All</a>
+                  </Button>
+                </div>
               </div>
             </CardContent>
           </Card>
@@ -52,6 +58,11 @@ export default function NewsSection() {
                 <NewsRow text="Practical Exam Dates for Science Departments" date="14 Dec 2024" />
                 <NewsRow text="Semester End Results for B.Com Final Year" date="11 Dec 2024" />
                 <NewsRow text="Hall Ticket Download for December Exams" date="08 Dec 2024" border={false} />
+                <div className="pt-2">
+                  <Button asChild variant="outline" className="w-full border-college-navy text-college-navy hover:bg-college-navy hover:text-white">
+                    <a href="/examinations">View All</a>
+                  </Button>
+                </div>
               </div>
             </CardContent>
           </Card>
@@ -72,6 +83,11 @@ export default function NewsSection() {
                 <NewsRow text="Interview results for Guest Faculty of All Departments" date="15 Dec 2024" />
                 <NewsRow text="Extension Notice for Nomination Form Students' Association 2025-26" date="14 Dec 2024" />
                 <NewsRow text="Annual Cultural Festival - Kalakriti 2024" date="20-22 Dec 2024" border={false} />
+                <div className="pt-2">
+                  <Button asChild variant="outline" className="w-full border-college-navy text-college-navy hover:bg-college-navy hover:text-white">
+                    <a href="/notices">View All</a>
+                  </Button>
+                </div>
               </div>
             </CardContent>
           </Card>
