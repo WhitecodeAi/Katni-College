@@ -82,7 +82,7 @@ export default function NewsSection() {
                 <NewsRow text="Notice for Walk in Interview for Hindi Guest Faculty" date="18 Dec 2024" />
                 <NewsRow text="Interview results for Guest Faculty of All Departments" date="15 Dec 2024" />
                 <NewsRow text="Extension Notice for Nomination Form Students' Association 2025-26" date="14 Dec 2024" />
-                <NewsRow text="Annual Cultural Festival - Kalakriti 2024" date="20-22 Dec 2024" border={false} />
+                <NewsRow text="Annual Cultural Festival - Kalakriti 2024" date="20 Dec 2024" border={false} />
               </div>
               <div className="px-6 pb-6">
                 <Button asChild variant="outline" className="w-full border-college-navy text-college-navy hover:bg-college-navy hover:text-white">
