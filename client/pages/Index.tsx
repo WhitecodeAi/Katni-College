@@ -1,7 +1,11 @@
-import { ChevronRight, ChevronLeft, Users, BookOpen, Award, MapPin, Phone, Mail, Calendar, FileText } from "lucide-react";
+import { ChevronRight, ChevronLeft, Users, BookOpen, Award, MapPin, Phone, Mail, Calendar, FileText, GraduationCap, Microscope, Atom, Cpu, Briefcase, Scale, Library } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { useState, useEffect } from "react";
+import NewsSection from "@/components/NewsSection";
+import LeadershipCard from "@/components/LeadershipCard";
+import { leaders } from "@/data/leaders";
 
 export default function Index() {
   const slideImage = 'https://cdn.builder.io/api/v1/image/assets%2Fea72e649953d477dac6701b6dc53a600%2Fdd7883b2dc6f4ddea6e4780d8396b2eb?format=webp&width=800';
@@ -13,6 +17,246 @@ export default function Index() {
   const prevSlide = () => {
     // Arrows are visible but do nothing since it's the same slide
   };
+
+  const [visionExpanded, setVisionExpanded] = useState(false);
+  const [missionExpanded, setMissionExpanded] = useState(false);
+
+  type Program = { name: string; eligibility: string; duration: string; details: string; imageUrl?: string };
+
+  const faculties: Record<string, Program[]> = {
+    Science: [
+      {
+        name: "B.Sc. (Biotech - Botany - Computer)",
+        eligibility: "Higher Secondary (10+2) Biology",
+        duration: "3 Years",
+        details: "Undergraduate program combining Biotechnology, Botany and Computer studies.",
+        imageUrl: "https://plus.unsplash.com/premium_photo-1661432575489-b0400f4fea58?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      },
+      {
+        name: "B.Sc. (Biotech - Chemistry - Computer)",
+        eligibility: "Higher Secondary (10+2) Biology",
+        duration: "3 Years",
+        details: "Undergraduate program with Biotechnology, Chemistry and Computer Science.",
+        imageUrl: "https://plus.unsplash.com/premium_photo-1661432575489-b0400f4fea58?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      },
+      {
+        name: "B.Sc. (Chemistry - Mathematics - Physics)",
+        eligibility: "Higher Secondary (10+2)",
+        duration: "3 Years",
+        details: "Core science combination covering Chemistry, Mathematics and Physics.",
+        imageUrl: "https://plus.unsplash.com/premium_photo-1661432575489-b0400f4fea58?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      },
+      {
+        name: "B.Sc. (Computer Science - Mathematics - Physics)",
+        eligibility: "Higher Secondary (10+2)",
+        duration: "3 Years",
+        details: "Focus on Computer Science along with Mathematics and Physics.",
+        imageUrl: "https://plus.unsplash.com/premium_photo-1661432575489-b0400f4fea58?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      },
+      {
+        name: "B.Sc. (Computer Science - Mathematics - Economics)",
+        eligibility: "Higher Secondary (10+2)",
+        duration: "3 Years",
+        details: "Interdisciplinary program spanning CS, Mathematics and Economics.",
+        imageUrl: "https://plus.unsplash.com/premium_photo-1661432575489-b0400f4fea58?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      },
+    ],
+    Commerce: [
+      {
+        name: "B.Com. (Applied Economics)",
+        eligibility: "Higher Secondary (10+2) any stream except Arts",
+        duration: "3 Years",
+        details: "Undergraduate commerce degree with Applied Economics specialization.",
+        imageUrl: "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      },
+      {
+        name: "B.Com. (Tax Procedure)",
+        eligibility: "Higher Secondary (10+2) any stream except Arts",
+        duration: "3 Years",
+        details: "Specialization focused on taxation procedures and practices.",
+        imageUrl: "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      },
+      {
+        name: "B.Com. (Computer Application)",
+        eligibility: "Higher Secondary (10+2) any stream except Arts",
+        duration: "3 Years",
+        details: "Commerce program with emphasis on computer applications.",
+        imageUrl: "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      },
+      {
+        name: "B.Com. (Marketing)",
+        eligibility: "Higher Secondary (10+2) any stream except Arts",
+        duration: "3 Years",
+        details: "Undergraduate program centered on marketing domain.",
+        imageUrl: "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      },
+      {
+        name: "B.Com. (Honours - Account)",
+        eligibility: "Higher Secondary (10+2) any stream except Arts",
+        duration: "3 Years",
+        details: "Honours specialization in Accountancy.",
+        imageUrl: "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      },
+      {
+        name: "B.Com. (Honours - Management)",
+        eligibility: "Higher Secondary (10+2) any stream except Arts",
+        duration: "3 Years",
+        details: "Honours specialization in Management.",
+        imageUrl: "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      },
+      {
+        name: "M.Com.",
+        eligibility: "Graduation in Commerce",
+        duration: "2 Years (4 Semesters)",
+        details: "Postgraduate program in Commerce.",
+        imageUrl: "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      },
+    ],
+    Arts: [
+      {
+        name: "B.A. (History - Political Science - Sociology)",
+        eligibility: "Higher Secondary (10+2)",
+        duration: "3 Years",
+        details: "Undergraduate arts combination in History, Political Science and Sociology.",
+        imageUrl: "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      },
+      {
+        name: "B.A. (Hindi - History - Sociology)",
+        eligibility: "Higher Secondary (10+2)",
+        duration: "3 Years",
+        details: "Combination of Hindi, History and Sociology.",
+        imageUrl: "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      },
+      {
+        name: "B.A. (Hindi - History - Political Science)",
+        eligibility: "Higher Secondary (10+2)",
+        duration: "3 Years",
+        details: "Combination of Hindi, History and Political Science.",
+        imageUrl: "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      },
+      {
+        name: "B.A. (Economics - Hindi - Political Science)",
+        eligibility: "Higher Secondary (10+2)",
+        duration: "3 Years",
+        details: "Combination of Economics, Hindi and Political Science.",
+        imageUrl: "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      },
+      {
+        name: "B.A. (Economics - Political Science - Sociology)",
+        eligibility: "Higher Secondary (10+2)",
+        duration: "3 Years",
+        details: "Combination of Economics, Political Science and Sociology.",
+        imageUrl: "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      },
+      {
+        name: "B.A. (Computer - History - Sociology)",
+        eligibility: "Higher Secondary (10+2)",
+        duration: "3 Years",
+        details: "Combination of Computer, History and Sociology.",
+        imageUrl: "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      },
+    ],
+    "Computer Science": [
+      {
+        name: "B.C.A.",
+        eligibility: "Higher Secondary (10+2) with Mathematics",
+        duration: "3 Years",
+        details: "Bachelor's in Computer Applications.",
+        imageUrl: "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      },
+      {
+        name: "M.Sc. (Computer Science)",
+        eligibility: "Graduation in Computer Science/Application",
+        duration: "2 Years (4 Semesters)",
+        details: "Postgraduate program in Computer Science.",
+        imageUrl: "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      },
+    ],
+    Management: [
+      {
+        name: "B.B.A.", eligibility: "Higher Secondary (10+2)", duration: "3 Years", details: "Bachelor of Business Administration.",
+        imageUrl: "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+},
+     
+    ],
+    Law: [
+      { name: "LL.B.", eligibility: "Graduation in any stream", duration: "3 Years", details: "Bachelor of Laws." },
+      {
+        name: "LL.M.", eligibility: "Graduation in LL.B.", duration: "2 Years (4 Semesters)",
+       
+      },
+    ],
+    "Library Science": [
+      {
+        name: "B.Lib.", eligibility: "Graduation in any stream", duration: "1 Year (2 Semesters)", details: "Bachelor of Library and Information Science.",
+        imageUrl: "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+},
+    ],
+    "Social Work": [
+      {
+        name: "MSW", eligibility: "Graduation in any stream", duration: "2 Years (4 Semesters)", details: "Master of Social Work.",
+        imageUrl: "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+},
+    ],
+  };
+
+  const facultyColors: Record<string, string> = {
+    Science: "from-college-gold to-college-sage",
+    Commerce: "from-college-burgundy to-college-navy",
+    Arts: "from-college-navy to-college-gold",
+    "Computer Science": "from-college-sage to-college-gold",
+    Management: "from-college-burgundy to-college-sage",
+    Law: "from-college-burgundy to-college-navy",
+    "Library Science": "from-college-navy to-college-burgundy",
+    "Social Work": "from-college-gold to-college-sage",
+  };
+
+  const programGradients = [
+    "from-college-navy to-college-burgundy",
+    "from-college-gold to-college-sage",
+    "from-college-burgundy to-college-navy",
+    "from-college-sage to-college-gold",
+    "from-college-navy to-college-gold",
+    "from-college-gold to-college-bronze",
+  ];
+
+  const facultyImages: Record<string, string[]> = {
+    Science: [
+      "https://images.unsplash.com/photo-1581091012184-7f06b180a3a1?auto=format&fit=crop&w=1200&q=60",
+      "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=1200&q=60",
+      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=60",
+    ],
+    Commerce: [
+      "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1200&q=60",
+      "https://images.unsplash.com/photo-1554224154-22dec7ec8818?auto=format&fit=crop&w=1200&q=60",
+    ],
+    Arts: [
+      "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=1200&q=60",
+      "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1200&q=60",
+    ],
+    "Computer Science": [
+      "https://images.unsplash.com/photo-1518779578993-ec3579fee39f?auto=format&fit=crop&w=1200&q=60",
+      "https://images.unsplash.com/photo-1517433456452-f9633a875f6f?auto=format&fit=crop&w=1200&q=60",
+    ],
+    Management: [
+      "https://images.unsplash.com/photo-1551836022-4c4c79ecde51?auto=format&fit=crop&w=1200&q=60",
+      "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=60",
+    ],
+    Law: [
+      "https://images.unsplash.com/photo-1555375771-14b1f1aa1b2a?auto=format&fit=crop&w=1200&q=60",
+      "https://images.unsplash.com/photo-1528740561666-dc2479dc08ab?auto=format&fit=crop&w=1200&q=60",
+    ],
+    "Library Science": [
+      "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=60",
+      "https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=1200&q=60",
+    ],
+    "Social Work": [
+      "https://images.unsplash.com/photo-1520975928316-56f2c6d69c49?auto=format&fit=crop&w=1200&q=60",
+      "https://images.unsplash.com/photo-1515169067865-5387ec356754?auto=format&fit=crop&w=1200&q=60",
+    ],
+  };
+
+  const fallbackImage = "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&quot";
 
   return (
     <div className="bg-white">
@@ -64,15 +308,11 @@ export default function Index() {
                 size="lg"
                 className="bg-gradient-to-r from-college-gold to-college-bronze hover:from-college-bronze hover:to-college-gold text-white font-bold text-lg px-10 py-5 h-auto rounded-xl"
               >
-                Apply for Admission
+                Explore Programs
                 <ChevronRight className="ml-3 h-5 w-5" />
               </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-2 border-college-navy text-college-navy hover:bg-college-navy hover:text-white font-bold text-lg px-10 py-5 h-auto rounded-xl"
-              >
-                Explore Programs
+              <Button asChild size="lg" variant="outline" className="border-2 border-college-navy text-college-navy hover:bg-college-navy hover:text-white font-bold text-lg px-10 py-5 h-auto rounded-xl">
+                <a href="/brochure">Download Brochure</a>
               </Button>
             </div>
           </div>
@@ -80,135 +320,7 @@ export default function Index() {
       </section>
 
       {/* News & Notices Section */}
-      <section className="py-16 bg-white border-b border-college-cream">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-serif font-bold text-college-navy mb-4">
-              Latest News & Notices
-            </h2>
-            <p className="text-lg text-muted-foreground">
-              Stay updated with the latest announcements and important information
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="bg-gradient-to-b from-white to-college-cream/20 border-0 shadow-lg hover:shadow-xl transition-all duration-300">
-              <CardContent className="p-0">
-                <div className="bg-college-gold px-6 py-4">
-                  <h3 className="font-bold text-college-navy text-lg text-center">
-                    ADMISSIONS
-                  </h3>
-                </div>
-                <div className="p-6 space-y-4">
-                  <div className="flex justify-between items-start py-3 border-b border-college-cream/50">
-                    <p className="text-sm text-college-navy font-medium leading-relaxed pr-3">
-                      Admission Process for Academic Year 2024-25 Now Open
-                    </p>
-                    <span className="text-xs text-muted-foreground whitespace-nowrap">15 Dec 2024</span>
-                  </div>
-                  <div className="flex justify-between items-start py-3 border-b border-college-cream/50">
-                    <p className="text-sm text-college-navy font-medium leading-relaxed pr-3">
-                      Merit List for UG Programs Published
-                    </p>
-                    <span className="text-xs text-muted-foreground whitespace-nowrap">12 Dec 2024</span>
-                  </div>
-                  <div className="flex justify-between items-start py-3 border-b border-college-cream/50">
-                    <p className="text-sm text-college-navy font-medium leading-relaxed pr-3">
-                      Scholarship Application Forms Available
-                    </p>
-                    <span className="text-xs text-muted-foreground whitespace-nowrap">10 Dec 2024</span>
-                  </div>
-                  <div className="flex justify-between items-start py-3">
-                    <p className="text-sm text-college-navy font-medium leading-relaxed pr-3">
-                      Last Date for Online Application Extended
-                    </p>
-                    <span className="text-xs text-muted-foreground whitespace-nowrap">08 Dec 2024</span>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-gradient-to-b from-white to-college-cream/20 border-0 shadow-lg hover:shadow-xl transition-all duration-300">
-              <CardContent className="p-0">
-                <div className="bg-college-burgundy px-6 py-4">
-                  <h3 className="font-bold text-white text-lg text-center">
-                    EXAMINATIONS
-                  </h3>
-                </div>
-                <div className="p-6 space-y-4">
-                  <div className="flex justify-between items-start py-3 border-b border-college-cream/50">
-                    <p className="text-sm text-college-navy font-medium leading-relaxed pr-3">
-                      Winter Semester Examination Schedule Released
-                    </p>
-                    <span className="text-xs text-muted-foreground whitespace-nowrap">16 Dec 2024</span>
-                  </div>
-                  <div className="flex justify-between items-start py-3 border-b border-college-cream/50">
-                    <p className="text-sm text-college-navy font-medium leading-relaxed pr-3">
-                      Practical Exam Dates for Science Departments
-                    </p>
-                    <span className="text-xs text-muted-foreground whitespace-nowrap">14 Dec 2024</span>
-                  </div>
-                  <div className="flex justify-between items-start py-3 border-b border-college-cream/50">
-                    <p className="text-sm text-college-navy font-medium leading-relaxed pr-3">
-                      Semester End Results for B.Com Final Year
-                    </p>
-                    <span className="text-xs text-muted-foreground whitespace-nowrap">11 Dec 2024</span>
-                  </div>
-                  <div className="flex justify-between items-start py-3">
-                    <p className="text-sm text-college-navy font-medium leading-relaxed pr-3">
-                      Hall Ticket Download for December Exams
-                    </p>
-                    <span className="text-xs text-muted-foreground whitespace-nowrap">08 Dec 2024</span>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-gradient-to-b from-white to-college-cream/20 border-0 shadow-lg hover:shadow-xl transition-all duration-300">
-              <CardContent className="p-0">
-                <div className="bg-college-sage px-6 py-4">
-                  <h3 className="font-bold text-white text-lg text-center">
-                    EVENTS & NOTICES
-                  </h3>
-                </div>
-                <div className="p-6 space-y-4">
-                  <div className="flex justify-between items-start py-3 border-b border-college-cream/50">
-                    <p className="text-sm text-college-navy font-medium leading-relaxed pr-3">
-                      Notice for Walk in Interview for Hindi Guest Faculty
-                    </p>
-                    <span className="text-xs text-muted-foreground whitespace-nowrap">18 Dec 2024</span>
-                  </div>
-                  <div className="flex justify-between items-start py-3 border-b border-college-cream/50">
-                    <p className="text-sm text-college-navy font-medium leading-relaxed pr-3">
-                      Interview results for Guest Faculty of All Departments
-                    </p>
-                    <span className="text-xs text-muted-foreground whitespace-nowrap">15 Dec 2024</span>
-                  </div>
-                  <div className="flex justify-between items-start py-3 border-b border-college-cream/50">
-                    <p className="text-sm text-college-navy font-medium leading-relaxed pr-3">
-                      Extension Notice for Nomination Form Students' Association 2025-26
-                    </p>
-                    <span className="text-xs text-muted-foreground whitespace-nowrap">14 Dec 2024</span>
-                  </div>
-                  <div className="flex justify-between items-start py-3">
-                    <p className="text-sm text-college-navy font-medium leading-relaxed pr-3">
-                      Annual Cultural Festival - Kalakriti 2024
-                    </p>
-                    <span className="text-xs text-muted-foreground whitespace-nowrap">20-22 Dec 2024</span>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          <div className="text-center mt-8">
-            <Button className="bg-college-navy hover:bg-college-navy/90 text-white">
-              View All News & Notices
-              <ChevronRight className="ml-2 h-4 w-4" />
-            </Button>
-          </div>
-        </div>
-      </section>
+      <NewsSection />
 
       {/* Vision & Mission Section */}
       <section className="py-20 bg-gradient-to-br from-college-cream to-white">
@@ -223,8 +335,8 @@ export default function Index() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-12">
-            <Card className="bg-white/70 backdrop-blur-sm border-0 shadow-xl">
-              <CardContent className="p-8">
+            <Card className="bg-white/70 backdrop-blur-sm border-0 shadow-xl h-full">
+              <CardContent className="p-8 flex flex-col items-center">
                 <div className="w-16 h-16 bg-gradient-to-br from-college-navy to-college-gold rounded-full flex items-center justify-center mx-auto mb-6">
                   <svg className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -234,17 +346,28 @@ export default function Index() {
                 <h3 className="text-2xl font-serif font-bold text-college-navy mb-4 text-center">
                   Our Vision
                 </h3>
-                <p className="text-muted-foreground leading-relaxed text-center">
-                  To be a premier autonomous institution of higher learning that fosters
-                  intellectual growth, innovation, and social responsibility, preparing
-                  global citizens who contribute meaningfully to society and lead with
-                  integrity and wisdom.
+                <p className={`text-muted-foreground leading-relaxed text-center ${visionExpanded ? "" : "line-clamp-4"}`}>
+                  Vision to be recognised far and wide as an
+                  institution which provides need-based,
+                  skill-integrated, cost-effective, quality holistic
+                  education, to prepare the students into globally
+                  competitive, employable and responsivle citizens
+                  tomorrow. KACC is committed to becoming a centre of
+                  academic excellence.
                 </p>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => setVisionExpanded((v) => !v)}
+                  className="mt-4 border-college-navy text-college-navy hover:bg-college-navy hover:text-white"
+                >
+                  {visionExpanded ? "Read Less" : "Read More"}
+                </Button>
               </CardContent>
             </Card>
 
-            <Card className="bg-white/70 backdrop-blur-sm border-0 shadow-xl">
-              <CardContent className="p-8">
+            <Card className="bg-white/70 backdrop-blur-sm border-0 shadow-xl h-full">
+              <CardContent className="p-8 flex flex-col items-center">
                 <div className="w-16 h-16 bg-gradient-to-br from-college-burgundy to-college-sage rounded-full flex items-center justify-center mx-auto mb-6">
                   <svg className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
@@ -253,12 +376,22 @@ export default function Index() {
                 <h3 className="text-2xl font-serif font-bold text-college-navy mb-4 text-center">
                   Our Mission
                 </h3>
-                <p className="text-muted-foreground leading-relaxed text-center">
-                  To provide quality education through innovative teaching methodologies,
-                  research excellence, and holistic development programs. We are committed
-                  to nurturing critical thinking, ethical values, and lifelong learning
-                  while serving the educational needs of our community.
+                <p className={`text-muted-foreground leading-relaxed text-center ${missionExpanded ? "" : "line-clamp-4"}`}>
+                  Our mission is to create and acquire relevant
+                  knowledge along with skills and global competencies
+                  and disseminate the same among students. The college
+                  fosters holistic education through relevant
+                  curriculum, programmes and pedagogic innovations with
+                  focus on employability and self-employment.
                 </p>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => setMissionExpanded((v) => !v)}
+                  className="mt-4 border-college-navy text-college-navy hover:bg-college-navy hover:text-white"
+                >
+                  {missionExpanded ? "Read Less" : "Read More"}
+                </Button>
               </CardContent>
             </Card>
           </div>
@@ -278,105 +411,15 @@ export default function Index() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <Card className="bg-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-              <CardContent className="p-6 text-center">
-                <div className="relative mb-6">
-                  <div className="w-24 h-24 bg-gradient-to-br from-college-navy to-college-gold rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="text-white font-bold text-2xl font-serif">S</span>
-                  </div>
-                  <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-college-gold rounded-full flex items-center justify-center">
-                    <svg className="h-4 w-4 text-college-navy" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                </div>
-                <h3 className="text-lg font-serif font-bold text-college-navy mb-2">
-                  Dr. Rajesh Sharma
-                </h3>
-                <p className="text-college-gold font-medium mb-3">Secretary</p>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  "Education is the foundation of progress. At KACC, we strive to build strong foundations for our students' future."
-                </p>
-                <Button variant="outline" size="sm" className="mt-4 text-college-navy border-college-navy hover:bg-college-navy hover:text-white">
-                  Read Message
-                </Button>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-              <CardContent className="p-6 text-center">
-                <div className="relative mb-6">
-                  <div className="w-24 h-24 bg-gradient-to-br from-college-burgundy to-college-navy rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="text-white font-bold text-2xl font-serif">C</span>
-                  </div>
-                  <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-college-gold rounded-full flex items-center justify-center">
-                    <svg className="h-4 w-4 text-college-navy" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                </div>
-                <h3 className="text-lg font-serif font-bold text-college-navy mb-2">
-                  Shri Amit Verma
-                </h3>
-                <p className="text-college-gold font-medium mb-3">Chairperson</p>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  "Our commitment to excellence drives us to continuously evolve and provide world-class education to our students."
-                </p>
-                <Button variant="outline" size="sm" className="mt-4 text-college-navy border-college-navy hover:bg-college-navy hover:text-white">
-                  Read Message
-                </Button>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-              <CardContent className="p-6 text-center">
-                <div className="relative mb-6">
-                  <div className="w-24 h-24 bg-gradient-to-br from-college-sage to-college-gold rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="text-white font-bold text-2xl font-serif">P</span>
-                  </div>
-                  <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-college-gold rounded-full flex items-center justify-center">
-                    <svg className="h-4 w-4 text-college-navy" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                </div>
-                <h3 className="text-lg font-serif font-bold text-college-navy mb-2">
-                  Dr. Priya Agarwal
-                </h3>
-                <p className="text-college-gold font-medium mb-3">Principal</p>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  "Knowledge is power, and we empower our students with the tools they need to succeed in an ever-changing world."
-                </p>
-                <Button variant="outline" size="sm" className="mt-4 text-college-navy border-college-navy hover:bg-college-navy hover:text-white">
-                  Read Message
-                </Button>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-              <CardContent className="p-6 text-center">
-                <div className="relative mb-6">
-                  <div className="w-24 h-24 bg-gradient-to-br from-college-gold to-college-burgundy rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="text-white font-bold text-2xl font-serif">V</span>
-                  </div>
-                  <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-college-gold rounded-full flex items-center justify-center">
-                    <svg className="h-4 w-4 text-college-navy" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                </div>
-                <h3 className="text-lg font-serif font-bold text-college-navy mb-2">
-                  Prof. Suresh Kumar
-                </h3>
-                <p className="text-college-gold font-medium mb-3">Vice Principal</p>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  "Innovation in education is key to preparing students for tomorrow's challenges and opportunities."
-                </p>
-                <Button variant="outline" size="sm" className="mt-4 text-college-navy border-college-navy hover:bg-college-navy hover:text-white">
-                  Read Message
-                </Button>
-              </CardContent>
-            </Card>
+            {leaders.map((p) => (
+              <LeadershipCard
+                key={p.name}
+                name={p.name}
+                role={p.role}
+                imageUrl={p.imageUrl}
+                quote={p.quote}
+              />
+            ))}
           </div>
         </div>
       </section>
@@ -546,79 +589,60 @@ export default function Index() {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                title: "Arts & Humanities",
-                description: "Literature, History, Philosophy, Languages",
-                programs: ["B.A.", "M.A.", "Ph.D."],
-                color: "from-college-navy to-college-burgundy"
-              },
-              {
-                title: "Science & Technology",
-                description: "Physics, Chemistry, Mathematics, Computer Science",
-                programs: ["B.Sc.", "M.Sc.", "Ph.D."],
-                color: "from-college-gold to-college-sage"
-              },
-              {
-                title: "Commerce & Management",
-                description: "Accounting, Economics, Business Administration",
-                programs: ["B.Com.", "M.Com.", "MBA"],
-                color: "from-college-burgundy to-college-navy"
-              },
-              {
-                title: "Law",
-                description: "Constitutional Law, Corporate Law, Criminal Law",
-                programs: ["LL.B.", "LL.M.", "Ph.D."],
-                color: "from-college-sage to-college-gold"
-              },
-              {
-                title: "Social Sciences",
-                description: "Sociology, Psychology, Political Science",
-                programs: ["B.A.", "M.A.", "Ph.D."],
-                color: "from-college-navy to-college-gold"
-              },
-              {
-                title: "Education",
-                description: "Teaching Methodology, Educational Psychology",
-                programs: ["B.Ed.", "M.Ed.", "Ph.D."],
-                color: "from-college-burgundy to-college-sage"
-              }
-            ].map((program, index) => (
-              <Card key={index} className="bg-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                <CardContent className="p-0">
-                  <div className={`h-32 bg-gradient-to-br ${program.color} flex items-center justify-center`}>
-                    <h3 className="text-xl font-serif font-bold text-white text-center px-4">
-                      {program.title}
-                    </h3>
-                  </div>
-                  <div className="p-6">
-                    <p className="text-muted-foreground mb-4 leading-relaxed">
-                      {program.description}
-                    </p>
-                    <div className="space-y-2">
-                      <p className="text-sm font-semibold text-college-navy">Programs:</p>
-                      <div className="flex flex-wrap gap-2">
-                        {program.programs.map((prog, idx) => (
-                          <span key={idx} className="px-3 py-1 bg-college-cream text-college-navy text-sm rounded-full font-medium">
-                            {prog}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                    <Button variant="outline" className="w-full mt-4 border-college-navy text-college-navy hover:bg-college-navy hover:text-white">
-                      Learn More
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
+          <Tabs defaultValue="Science" className="w-full">
+            <div className="flex justify-center mb-10 overflow-x-auto w-full">
+              <TabsList className="bg-college-cream text-college-navy whitespace-nowrap">
+                {Object.keys(faculties).map((fac) => (
+                  <TabsTrigger
+                    key={fac}
+                    value={fac}
+                    className="data-[state=active]:bg-college-gold data-[state=active]:text-college-navy shrink-0"
+                  >
+                    {fac}
+                  </TabsTrigger>
+                ))}
+              </TabsList>
+            </div>
+
+            {Object.entries(faculties).map(([fac, progs]) => (
+              <TabsContent key={fac} value={fac}>
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {progs.map((prog, idx) => (
+                    <Card key={idx} className="bg-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                      <CardContent className="p-0">
+                        <div
+                          className="relative h-36 overflow-hidden rounded-t-lg"
+                          style={{
+                            backgroundImage: `url('${prog.imageUrl || fallbackImage}')`,
+                            backgroundSize: 'cover',
+                            backgroundPosition: 'center',
+                          }}
+                        >
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent" />
+                          <h3 className="absolute bottom-3 left-4 right-4 text-lg font-serif font-bold text-white">
+                            {prog.name}
+                          </h3>
+                        </div>
+                        <div className="p-6 space-y-2">
+                          <p className="text-sm text-muted-foreground"><span className="font-semibold text-college-navy">Eligibility:</span> {prog.eligibility}</p>
+                          <p className="text-sm text-muted-foreground"><span className="font-semibold text-college-navy">Duration:</span> {prog.duration}</p>
+                          <p className="text-sm text-muted-foreground"><span className="font-semibold text-college-navy">Details:</span></p>
+                          <Button variant="outline" className="w-full mt-2 border-college-navy text-college-navy hover:bg-college-navy hover:text-white">
+                            Learn More
+                          </Button>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              </TabsContent>
             ))}
-          </div>
+          </Tabs>
         </div>
       </section>
 
       {/* Campus Life Section */}
-      <section className="py-20 bg-gradient-to-br from-college-cream to-white">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
@@ -697,12 +721,12 @@ export default function Index() {
       </section>
 
       {/* Contact CTA Section */}
-      <section className="py-20 bg-college-navy">
+      <section className="py-20 bg-gradient-to-br from-college-cream to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-serif font-bold text-white mb-6">
+          <h2 className="text-4xl font-serif font-bold text-college-navy mb-6">
             Ready to Begin Your Journey?
           </h2>
-          <p className="text-xl text-gray-200 mb-8 max-w-3xl mx-auto">
+          <p className="text-xl text-college-charcoal mb-8 max-w-3xl mx-auto">
             Join thousands of successful alumni who started their journey at KACC.
             Take the first step towards a bright future.
           </p>
@@ -714,38 +738,16 @@ export default function Index() {
               Apply for Admission
               <ChevronRight className="ml-2 h-5 w-5" />
             </Button>
-            <Button 
-              size="lg" 
-              variant="outline" 
-              className="border-white text-white hover:bg-white hover:text-college-navy font-semibold text-lg px-8 py-4 h-auto"
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="bg-white text-college-navy hover:bg-white/90 font-semibold text-lg px-8 py-4 h-auto"
             >
-              Download Brochure
+              <a href="/brochure">Download Brochure</a>
             </Button>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8 mt-16 pt-16 border-t border-gray-700">
-            <div className="text-center">
-              <div className="w-12 h-12 bg-college-gold rounded-full flex items-center justify-center mx-auto mb-4">
-                <MapPin className="h-6 w-6 text-college-navy" />
-              </div>
-              <h3 className="text-lg font-semibold text-white mb-2">Visit Campus</h3>
-              <p className="text-gray-300">Katni, Madhya Pradesh</p>
-            </div>
-            <div className="text-center">
-              <div className="w-12 h-12 bg-college-gold rounded-full flex items-center justify-center mx-auto mb-4">
-                <Phone className="h-6 w-6 text-college-navy" />
-              </div>
-              <h3 className="text-lg font-semibold text-white mb-2">Call Us</h3>
-              <p className="text-gray-300">+91 761 XXX XXXX</p>
-            </div>
-            <div className="text-center">
-              <div className="w-12 h-12 bg-college-gold rounded-full flex items-center justify-center mx-auto mb-4">
-                <Mail className="h-6 w-6 text-college-navy" />
-              </div>
-              <h3 className="text-lg font-semibold text-white mb-2">Email Us</h3>
-              <p className="text-gray-300">info@kacckatni.org</p>
-            </div>
-          </div>
         </div>
       </section>
     </div>

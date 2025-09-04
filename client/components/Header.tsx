@@ -7,7 +7,7 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="bg-white shadow-sm sticky top-0 z-50">
+    <header className="bg-white shadow-sm">
       {/* Top Contact Strip with Premium Styling */}
       <div className="bg-gradient-to-r from-college-navy via-college-charcoal to-college-navy text-white relative overflow-hidden">
         {/* Subtle Background Pattern */}
@@ -33,7 +33,7 @@ export default function Header() {
                 <span className="group-hover:text-college-gold transition-colors">+91 761 XXX XXXX</span>
               </div>
             </div>
-            <div className="flex items-center space-x-4">
+            <div className="hidden md:flex items-center space-x-4">
               <a href="/alumni" className="hover:text-college-gold transition-colors text-xs font-medium">
                 ALUMNI
               </a>
@@ -48,6 +48,9 @@ export default function Header() {
               </a>
               <a href="/careers" className="hover:text-college-gold transition-colors text-xs font-medium">
                 CAREERS
+              </a>
+              <a href="/contact" className="hover:text-college-gold transition-colors text-xs font-medium">
+                CONTACT
               </a>
             </div>
           </div>
@@ -72,15 +75,15 @@ export default function Header() {
               </div>
 
               <div className="flex flex-col justify-center space-y-2">
-                <h1 className="text-2xl font-serif font-bold text-college-navy tracking-tight leading-tight">
+                <h1 className="text-xl sm:text-2xl md:text-3xl font-serif font-bold text-college-navy tracking-tight leading-tight">
                   KATNI ARTS & COMMERCE COLLEGE
                 </h1>
-                <div className="flex items-center space-x-3">
-                  <div className="w-6 h-0.5 bg-yellow-400"></div>
+                <div className="hidden md:flex items-center space-x-3">
+                  <div className="w-6 h-0.5 bg-yellow-400 hidden md:block"></div>
                   <p className="text-sm text-college-charcoal font-medium">
-                    Near Railway Station, Katni - 483501, MP, India
+                    Saraswati School Road, Nai Basti, Katni, MP, India
                   </p>
-                  <div className="w-6 h-0.5 bg-yellow-400"></div>
+                  <div className="w-6 h-0.5 bg-yellow-400 hidden md:block"></div>
                 </div>
               </div>
             </div>
@@ -112,74 +115,6 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Primary Navigation - Light Brown/Golden Strip */}
-      <div className="bg-gradient-to-r from-amber-100 to-yellow-100 border-b border-college-navy/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <nav className="hidden lg:flex items-center h-12 space-x-8">
-            <a href="/" className="bg-college-navy text-white px-4 py-2 rounded-md text-sm font-semibold shadow-md hover:bg-college-navy/90 transition-all">
-              HOME
-            </a>
-            <a href="/about" className="text-college-navy hover:text-college-gold transition-colors font-medium text-sm">
-              ABOUT
-            </a>
-            <a href="/admissions" className="text-college-navy hover:text-college-gold transition-colors font-medium text-sm">
-              ADMISSIONS
-            </a>
-            <a href="/academics" className="text-college-navy hover:text-college-gold transition-colors font-medium text-sm">
-              ACADEMICS
-            </a>
-            <a href="/programs" className="text-college-navy hover:text-college-gold transition-colors font-medium text-sm">
-              PROGRAMS
-            </a>
-            <a href="/departments" className="text-college-navy hover:text-college-gold transition-colors font-medium text-sm">
-              DEPARTMENTS
-            </a>
-            <a href="/research" className="text-college-navy hover:text-college-gold transition-colors font-medium text-sm">
-              RESEARCH
-            </a>
-            <a href="/students" className="text-college-navy hover:text-college-gold transition-colors font-medium text-sm">
-              STUDENTS
-            </a>
-            <a href="/facilities" className="text-college-navy hover:text-college-gold transition-colors font-medium text-sm">
-              FACILITIES
-            </a>
-            <a href="/e-tenders" className="text-college-navy hover:text-college-gold transition-colors font-medium text-sm">
-              E-TENDERS
-            </a>
-            <a href="/publications" className="text-college-navy hover:text-college-gold transition-colors font-medium text-sm">
-              PUBLICATIONS
-            </a>
-          </nav>
-        </div>
-      </div>
-
-      {/* Scrolling News Strip - White */}
-      <div className="bg-white border-b border-college-cream overflow-hidden">
-        <div className="flex items-center h-10">
-          <div className="bg-college-navy text-white px-4 text-xs font-bold flex-shrink-0 h-full flex items-center">
-            LATEST NEWS
-          </div>
-          <div className="flex-1 relative overflow-hidden h-full">
-            <div className="animate-marquee whitespace-nowrap flex items-center h-full py-2">
-              <span className="text-college-navy text-sm px-6">
-                • Winter Semester Examination Schedule Released - Check Student Portal
-              </span>
-              <span className="text-college-navy text-sm px-6">
-                • Admission Process for Academic Year 2024-25 Now Open - Apply Online
-              </span>
-              <span className="text-college-navy text-sm px-6">
-                • Notice for Walk in Interview for Hindi Guest Faculty - 18 Dec 2024
-              </span>
-              <span className="text-college-navy text-sm px-6">
-                • Annual Cultural Festival Kalakriti 2024 - 20-22 December
-              </span>
-              <span className="text-college-navy text-sm px-6">
-                • Scholarship Application Forms Available - Download from Website
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
